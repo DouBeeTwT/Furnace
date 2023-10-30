@@ -2,7 +2,11 @@ import paramiko
 
 def return_gpu_info(GPU_Name:str, Username:str, Password:str):
     Port = int("2223"+GPU_Name[-1])
-    Results = []
+    Results = [False, False, False, False,
+               False, False, False, False,
+               False, False,
+               False, False, False, False,
+               False, False, False, False]
 
     ssh_client = paramiko.SSHClient()
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) 
@@ -11,7 +15,7 @@ def return_gpu_info(GPU_Name:str, Username:str, Password:str):
     stdout_info = stdout.read().decode("utf8")
     available_info_list = stdout_info.split("\n")[:-1]
     for available_info in available_info_list:
-        Results.append("The cuda:{} is available on {}".format(available_info[4], GPU_Name))
+        Results[int(GPU_Name[-1])*2-2+int(available_info[4])] = True
     ssh_client.close
     
     return Results

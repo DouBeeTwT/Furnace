@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trainer_Page</class>
+ <widget class="QWidget" name="Trainer_Page">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="SubtitleLabel" name="SubtitleLabel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>180</y>
+     <width>119</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Max Epoch</string>
+   </property>
+  </widget>
+  <widget class="LineEdit" name="LineEdit">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>180</y>
+     <width>128</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2000</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>230</y>
+     <width>119</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Early Stop</string>
+   </property>
+  </widget>
+  <widget class="LineEdit" name="LineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>230</y>
+     <width>128</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>200</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_3">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>300</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Random Seed</string>
+   </property>
+  </widget>
+  <widget class="LineEdit" name="LineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>300</y>
+     <width>128</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>42</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_4">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>140</y>
+     <width>181</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Labeled Images</string>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_5">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>200</y>
+     <width>181</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Saved at</string>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_6">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>260</y>
+     <width>181</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Model Saved at</string>
+   </property>
+  </widget>
+  <widget class="SubtitleLabel" name="SubtitleLabel_7">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>330</y>
+     <width>181</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dataset</string>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="PrimaryPushButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>500</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SUBMIT</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SubtitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
