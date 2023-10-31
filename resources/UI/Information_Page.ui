@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1400</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <property name="leftMargin">
@@ -400,6 +403,8 @@
    <header>qfluentwidgets</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
