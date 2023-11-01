@@ -31,6 +31,11 @@ class Demo(SplitFluentWindow):
         setThemeColor("#148CD3")
 
         ### Add Sub Page
+        
+        # trainer page
+        self.trainer_page = Trainer_Page(self)
+        self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
+
         # home page
         self.home_page = Home_Page(self)
         self.addSubInterface(self.home_page, FluentIcon.HOME, "Home")
@@ -50,9 +55,6 @@ class Demo(SplitFluentWindow):
         self.infomation_page.PrimaryPushButton.clicked.connect(self.ssh)
         self.infomation_page.ComboBox.currentIndexChanged.connect(self.color_clear)
 
-        # trainer page
-        self.trainer_page = Trainer_Page(self)
-        self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
 
         # Monitor_Page
         self.monitor_page = Monitor_Page(self)

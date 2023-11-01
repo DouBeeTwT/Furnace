@@ -1,0 +1,15 @@
+# QComBox AddItems
+
+MaxEpoch_Items = ["100", "500", "1000", "2000", "5000"]
+EarlyStop_Items = ["200", "500"]
+BatchSize_Items = ["1", "2", "4", "8", "16", "32", "64"]
+LearningRate_Items = ["0.001", "0.003", "0.01", "0.03", "0.1"]
+CudaDevice_Items = ["0", "1"]
+Model_Items = ["Unet", "ST-Unet", "ACC-Unet"]
+LossFunction_Items = ["MDR", "Lov-Multi", "ACC-Unet"]
+DimChannels_Items = ["16", "32", "64"]
+OutputChannels_Items = ["1", "4", "6", "100"]
+InputChannels_Items = ["1", "3"]
+FigureSize_Items = ["128", "256", "512", "1024"]
+TransDepthArea_Items = ["[4,4,4,4]", "[4,8,8,4]", "[8,8,8,8]"]
+TransHeadArea_Items = ["[4,4,4,4]", "[2,4,8,16]", "[4,8,8,16]"]
