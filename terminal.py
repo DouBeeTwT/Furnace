@@ -22,7 +22,7 @@ class Demo(SplitFluentWindow):
         self.setWindowIcon(QIcon("./resources/images/icon.png"))
 
         # Show in the center of the screen
-        self.resize(1200, 1000)
+        self.resize(800, 600)
         rect = QApplication.desktop().availableGeometry()
         w, h = rect.width(), rect.height()
         self.move(w//2-self.width()//2, h//2-self.height()//2)
@@ -53,6 +53,13 @@ class Demo(SplitFluentWindow):
         # trainer page
         self.trainer_page = Trainer_Page(self)
         self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
+        self.trainer_page.SmoothScrollArea.setStyleSheet("""
+             SmoothScrollArea{
+                background: transparent;
+                border: 0px solid #f9f9f9;
+             }
+        """)
+        self.trainer_page.SmoothScrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         # Monitor_Page
         self.monitor_page = Monitor_Page(self)

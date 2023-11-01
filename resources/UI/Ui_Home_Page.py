@@ -14,24 +14,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Home_Page(object):
     def setupUi(self, Home_Page):
         Home_Page.setObjectName("Home_Page")
-        Home_Page.resize(1400, 1000)
+        Home_Page.resize(800, 600)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Home_Page.sizePolicy().hasHeightForWidth())
         Home_Page.setSizePolicy(sizePolicy)
-        Home_Page.setMinimumSize(QtCore.QSize(1400, 0))
-        Home_Page.setMaximumSize(QtCore.QSize(1400, 16777215))
+        Home_Page.setMinimumSize(QtCore.QSize(800, 0))
+        Home_Page.setMaximumSize(QtCore.QSize(800, 16777215))
         Home_Page.setStyleSheet("")
-        self.SmoothScrollArea = SmoothScrollArea(Home_Page)
-        self.SmoothScrollArea.setGeometry(QtCore.QRect(0, 40, 1400, 1000))
-        self.SmoothScrollArea.setStyleSheet("background-image: url(:/images/bg1.png);")
-        self.SmoothScrollArea.setWidgetResizable(True)
-        self.SmoothScrollArea.setObjectName("SmoothScrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1398, 998))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.SmoothScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.retranslateUi(Home_Page)
         QtCore.QMetaObject.connectSlotsByName(Home_Page)
@@ -39,5 +30,4 @@ class Ui_Home_Page(object):
     def retranslateUi(self, Home_Page):
         _translate = QtCore.QCoreApplication.translate
         Home_Page.setWindowTitle(_translate("Home_Page", "Form"))
-from qfluentwidgets import SmoothScrollArea
 import resource_rc

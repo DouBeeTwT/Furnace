@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Information_Page(object):
     def setupUi(self, Information_Page):
         Information_Page.setObjectName("Information_Page")
-        Information_Page.resize(1400, 1000)
+        Information_Page.resize(800, 600)
         Information_Page.setStyleSheet("")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(Information_Page)
         self.verticalLayout_4.setContentsMargins(40, 70, 40, 30)

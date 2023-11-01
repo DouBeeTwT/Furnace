@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>1000</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1400</width>
+    <width>800</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1400</width>
+    <width>800</width>
     <height>16777215</height>
    </size>
   </property>
@@ -34,41 +34,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="SmoothScrollArea" name="SmoothScrollArea">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>40</y>
-     <width>1400</width>
-     <height>1000</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/images/bg1.png);</string>
-   </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1398</width>
-      <height>998</height>
-     </rect>
-    </property>
-   </widget>
-  </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>SmoothScrollArea</class>
-   <extends>QScrollArea</extends>
-   <header>qfluentwidgets</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="../resource.qrc"/>
  </resources>
