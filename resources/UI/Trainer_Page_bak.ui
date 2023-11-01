@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trainer_Page</class>
+ <widget class="QWidget" name="Trainer_Page">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>1998</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="DisplayLabel" name="DisplayLabel">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>650</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>32</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>训练参数设定与提交</string>
+   </property>
+   <property name="lightColor" stdset="0">
+    <color>
+     <red>20</red>
+     <green>140</green>
+     <blue>211</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="TitleLabel" name="TitleLabel">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>110</y>
+     <width>650</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>18</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Trainer Parameters and Submit</string>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="PrimaryPushButton">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>80</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SUBMIT</string>
+   </property>
+  </widget>
+  <widget class="SmoothScrollArea" name="SmoothScrollArea">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>180</y>
+     <width>650</width>
+     <height>1861</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border: 0px solid;</string>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustIgnored</enum>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>650</width>
+      <height>1861</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>650</width>
+      <height>1400</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="ElevatedCardWidget" name="ElevatedCardWidget">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>440</y>
+       <width>331</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <widget class="EditableComboBox" name="EditableComboBox_6">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>295</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>随机种子</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Random Seed</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_3">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>130</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>42</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_4">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>185</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>95</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Early Stop</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Learning Rate</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_2">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>75</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>200</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>185</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>批次规模</string>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>75</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>早停阈值轮次</string>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_5">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>240</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>0.001</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>295</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显卡设备编号</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>205</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Batch SIze</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>学习率</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>315</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+    </widget>
+    <widget class="CardWidget" name="CardWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>440</y>
+       <width>381</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <widget class="BodyLabel" name="BodyLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Model Parameters</string>
+      </property>
+     </widget>
+     <widget class="SubtitleLabel" name="SubtitleLabel_20">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型参数</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="ElevatedCardWidget" name="ElevatedCardWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>510</y>
+       <width>381</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <widget class="EditableComboBox" name="EditableComboBox_7">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>270</y>
+        <width>111</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>[4,4,4,4]</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>输入维度</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Input Channels</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_9">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>170</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>95</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Loss Function</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>240</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Figure Size</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_10">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>75</y>
+        <width>160</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Lovasz_Multical</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_9">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>130</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>扩展维度</string>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>75</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>损失函数</string>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_11">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>220</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>512</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>层数</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_10">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dim Channels</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(116, 120, 122);</string>
+      </property>
+      <property name="text">
+       <string>Model</string>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>图像大小</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Depth</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_12">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>20</y>
+        <width>160</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Unet</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_13">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>170</y>
+        <width>100</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_13">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>130</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>输出维度</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_13">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Output Channels</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_17">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>320</y>
+        <width>111</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>[2,4,8,16]</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_14">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>340</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Head</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_14">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>320</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>头数</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="CardWidget" name="CardWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>910</y>
+       <width>461</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <widget class="BodyLabel" name="BodyLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pathway Parameters</string>
+      </property>
+     </widget>
+     <widget class="SubtitleLabel" name="SubtitleLabel_21">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>路径参数</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="ElevatedCardWidget" name="ElevatedCardWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>980</y>
+       <width>461</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_15">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>输出路径</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_15">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Output Pathway</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_15">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>130</y>
+        <width>151</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>42</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_16">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>185</y>
+        <width>171</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_16">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>95</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Data Set</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_16">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>带标签图像</string>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_18">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>75</y>
+        <width>111</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>200</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_17">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>185</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>批次规模</string>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="StrongBodyLabel_18">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>75</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>数据集</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_18">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>205</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Batch SIze</string>
+      </property>
+      <property name="lightColor" stdset="0">
+       <color>
+        <red>116</red>
+        <green>120</green>
+        <blue>122</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="CaptionLabel_19">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(116, 120, 122);</string>
+      </property>
+      <property name="text">
+       <string>Labeled Images</string>
+      </property>
+     </widget>
+     <widget class="EditableComboBox" name="EditableComboBox_20">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>20</y>
+        <width>271</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>2000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="BodyLabel" name="BodyLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>150</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Basic Parameters</string>
+     </property>
+    </widget>
+    <widget class="SubtitleLabel" name="SubtitleLabel_19">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>基本参数</string>
+     </property>
+    </widget>
+    <widget class="SimpleCardWidget" name="SimpleCardWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>651</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <widget class="CardWidget" name="CardWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>631</width>
+        <height>55</height>
+       </rect>
+      </property>
+      <widget class="EditableComboBox" name="EditableComboBox">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>10</y>
+         <width>150</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>2000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="CaptionLabel" name="CaptionLabel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>70</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(116, 120, 122);</string>
+       </property>
+       <property name="text">
+        <string>Max Epoch</string>
+       </property>
+      </widget>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>最大训练轮次</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="CardWidget" name="CardWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>65</y>
+        <width>631</width>
+        <height>55</height>
+       </rect>
+      </property>
+      <widget class="EditableComboBox" name="EditableComboBox_14">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>10</y>
+         <width>100</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>200</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="CaptionLabel" name="CaptionLabel_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>70</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(116, 120, 122);</string>
+       </property>
+       <property name="text">
+        <string>Early Stop</string>
+       </property>
+      </widget>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel_19">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>早停阈值轮次</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>EditableComboBox</class>
+   <extends>LineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>CardWidget</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ElevatedCardWidget</class>
+   <extends>SimpleCardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SimpleCardWidget</class>
+   <extends>CardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SmoothScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CaptionLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>BodyLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>StrongBodyLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SubtitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>DisplayLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

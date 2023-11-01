@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Github\Trainer_GUI\resources\UI\Trainer_Page.ui'
+# Form implementation generated from reading ui file 'e:\Github\Trainer_GUI\resources\UI\Trainer_Page.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,281 +14,725 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Trainer_Page(object):
     def setupUi(self, Trainer_Page):
         Trainer_Page.setObjectName("Trainer_Page")
-        Trainer_Page.resize(800, 600)
-        self.DisplayLabel = DisplayLabel(Trainer_Page)
-        self.DisplayLabel.setGeometry(QtCore.QRect(60, 60, 650, 90))
-        self.DisplayLabel.setProperty("lightColor", QtGui.QColor(20, 140, 211))
-        self.DisplayLabel.setObjectName("DisplayLabel")
+        Trainer_Page.resize(800, 671)
+        self.PageTitle = DisplayLabel(Trainer_Page)
+        self.PageTitle.setGeometry(QtCore.QRect(60, 60, 650, 51))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(32)
+        font.setBold(False)
+        self.PageTitle.setFont(font)
+        self.PageTitle.setProperty("lightColor", QtGui.QColor(20, 140, 211))
+        self.PageTitle.setObjectName("PageTitle")
         self.TitleLabel = TitleLabel(Trainer_Page)
-        self.TitleLabel.setGeometry(QtCore.QRect(60, 150, 650, 40))
+        self.TitleLabel.setGeometry(QtCore.QRect(60, 110, 650, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(18)
+        font.setBold(False)
+        self.TitleLabel.setFont(font)
         self.TitleLabel.setObjectName("TitleLabel")
-        self.PrimaryPushButton = PrimaryPushButton(Trainer_Page)
-        self.PrimaryPushButton.setGeometry(QtCore.QRect(490, 160, 153, 32))
-        self.PrimaryPushButton.setObjectName("PrimaryPushButton")
-        self.SmoothScrollArea = SmoothScrollArea(Trainer_Page)
-        self.SmoothScrollArea.setGeometry(QtCore.QRect(60, 220, 650, 381))
-        self.SmoothScrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.SmoothScrollArea.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
-        self.SmoothScrollArea.setWidgetResizable(True)
-        self.SmoothScrollArea.setObjectName("SmoothScrollArea")
+        self.Submit = PrimaryPushButton(Trainer_Page)
+        self.Submit.setGeometry(QtCore.QRect(520, 80, 153, 32))
+        self.Submit.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"\n"
+"    color: black;\n"
+"\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"\n"
+"    border-radius: 5px;\n"
+"\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"\n"
+"    padding: 5px 12px 6px 12px;\n"
+"\n"
+"    outline: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"ToolButton {\n"
+"\n"
+"    padding: 5px 9px 6px 8px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"\n"
+"    padding: 5px 12px 6px 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"\n"
+"    padding: 5px 12px 6px 36px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"\n"
+"    padding: 5px 31px 6px 8px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"\n"
+"    padding: 5px 31px 6px 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"\n"
+"    padding: 5px 31px 6px 36px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"\n"
+"PrimaryToolButton,\n"
+"\n"
+"ToggleButton:checked,\n"
+"\n"
+"ToggleToolButton:checked {\n"
+"\n"
+"    color: white;\n"
+"\n"
+"    background-color: #009faa;\n"
+"\n"
+"    border: 1px solid #00a7b3;\n"
+"\n"
+"    border-bottom: 1px solid #007780;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"\n"
+"PrimaryToolButton:hover,\n"
+"\n"
+"ToggleButton:checked:hover,\n"
+"\n"
+"ToggleToolButton:checked:hover {\n"
+"\n"
+"    background-color: #00a7b3;\n"
+"\n"
+"    border: 1px solid #2daab3;\n"
+"\n"
+"    border-bottom: 1px solid #007780;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"\n"
+"PrimaryToolButton:pressed,\n"
+"\n"
+"ToggleButton:checked:pressed,\n"
+"\n"
+"ToggleToolButton:checked:pressed {\n"
+"\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"\n"
+"    background-color: #3eabb3;\n"
+"\n"
+"    border: 1px solid #3eabb3;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"\n"
+"PrimaryToolButton:disabled,\n"
+"\n"
+"ToggleButton:checked:disabled,\n"
+"\n"
+"ToggleToolButton:checked:disabled {\n"
+"\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"\n"
+"    background-color: rgb(205, 205, 205);\n"
+"\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"SplitDropButton,\n"
+"\n"
+"PrimarySplitDropButton {\n"
+"\n"
+"    border-left: none;\n"
+"\n"
+"    border-top-left-radius: 0;\n"
+"\n"
+"    border-bottom-left-radius: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#splitPushButton,\n"
+"\n"
+"#splitToolButton,\n"
+"\n"
+"#primarySplitPushButton,\n"
+"\n"
+"#primarySplitToolButton {\n"
+"\n"
+"    border-top-right-radius: 0;\n"
+"\n"
+"    border-bottom-right-radius: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"\n"
+"#splitToolButton:pressed,\n"
+"\n"
+"SplitDropButton:pressed {\n"
+"\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"\n"
+"    border-bottom: 1px solid #007780;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"\n"
+"    border-right: 1px solid #3eabb3;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"\n"
+"    border-bottom: 1px solid #007780;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton {\n"
+"\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"\n"
+"    padding: 6px 12px 6px 12px;\n"
+"\n"
+"    color: #009faa;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"    border-radius: 6px;\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"\n"
+"    padding: 6px 12px 6px 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"\n"
+"    padding: 6px 12px 6px 36px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"\n"
+"    color: #009faa;\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"\n"
+"    color: #009faa;\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"\n"
+"    min-height: 24px;\n"
+"\n"
+"    max-height: 24px;\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"\n"
+"    color: black;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator {\n"
+"\n"
+"    width: 18px;\n"
+"\n"
+"    height: 18px;\n"
+"\n"
+"    border-radius: 11px;\n"
+"\n"
+"    border: 2px solid #999999;\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"\n"
+"    margin-right: 4px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"\n"
+"    border: 2px solid #bbbbbb;\n"
+"\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"\n"
+"    height: 22px;\n"
+"\n"
+"    width: 22px;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"    border-radius: 11px;\n"
+"\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.6 #009faa,\n"
+"\n"
+"            stop:1 #009faa);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.7 #009faa,\n"
+"\n"
+"            stop:1 #009faa);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.6 #009faa,\n"
+"\n"
+"            stop:1 #009faa);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton:disabled {\n"
+"\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"\n"
+"    border: 2px solid #bbbbbb;\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"\n"
+"    border: none;\n"
+"\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"TransparentToolButton,\n"
+"\n"
+"TransparentToggleToolButton,\n"
+"\n"
+"TransparentDropDownToolButton,\n"
+"\n"
+"TransparentPushButton,\n"
+"\n"
+"TransparentDropDownPushButton,\n"
+"\n"
+"TransparentTogglePushButton {\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"    border-radius: 5px;\n"
+"\n"
+"    margin: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"\n"
+"TransparentToggleToolButton:hover,\n"
+"\n"
+"TransparentDropDownToolButton:hover,\n"
+"\n"
+"TransparentPushButton:hover,\n"
+"\n"
+"TransparentDropDownPushButton:hover,\n"
+"\n"
+"TransparentTogglePushButton:hover {\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"\n"
+"TransparentToggleToolButton:pressed,\n"
+"\n"
+"TransparentDropDownToolButton:pressed,\n"
+"\n"
+"TransparentPushButton:pressed,\n"
+"\n"
+"TransparentDropDownPushButton:pressed,\n"
+"\n"
+"TransparentTogglePushButton:pressed {\n"
+"\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"\n"
+"TransparentToggleToolButton:disabled,\n"
+"\n"
+"TransparentDropDownToolButton:disabled,\n"
+"\n"
+"TransprentPushButton:disabled,\n"
+"\n"
+"TransparentDropDownPushButton:disabled,\n"
+"\n"
+"TransprentTogglePushButton:disabled {\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"\n"
+"PillPushButton:hover,\n"
+"\n"
+"PillPushButton:pressed,\n"
+"\n"
+"PillPushButton:disabled,\n"
+"\n"
+"PillPushButton:checked,\n"
+"\n"
+"PillPushButton:checked:hover,\n"
+"\n"
+"PillPushButton:checked:pressed,\n"
+"\n"
+"PillPushButton:disabled:checked,\n"
+"\n"
+"PillToolButton,\n"
+"\n"
+"PillToolButton:hover,\n"
+"\n"
+"PillToolButton:pressed,\n"
+"\n"
+"PillToolButton:disabled,\n"
+"\n"
+"PillToolButton:checked,\n"
+"\n"
+"PillToolButton:checked:hover,\n"
+"\n"
+"PillToolButton:checked:pressed,\n"
+"\n"
+"PillToolButton:disabled:checked {\n"
+"\n"
+"    background-color: transparent;\n"
+"\n"
+"    border: none;\n"
+"\n"
+"}\n"
+"\n"
+"")
+        self.Submit.setObjectName("Submit")
+        self.MainArea = SmoothScrollArea(Trainer_Page)
+        self.MainArea.setGeometry(QtCore.QRect(60, 180, 650, 491))
+        self.MainArea.setStyleSheet("background-color: transparent;\n"
+"border: 0px solid;")
+        self.MainArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.MainArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.MainArea.setWidgetResizable(True)
+        self.MainArea.setObjectName("MainArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 650, 1400))
         self.scrollAreaWidgetContents.setMinimumSize(QtCore.QSize(650, 1400))
-        self.scrollAreaWidgetContents.setStyleSheet("background-color: rgb(249, 249, 249);")
+        self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.CardWidget = CardWidget(self.scrollAreaWidgetContents)
-        self.CardWidget.setGeometry(QtCore.QRect(20, 10, 331, 71))
-        self.CardWidget.setObjectName("CardWidget")
-        self.BodyLabel = BodyLabel(self.CardWidget)
-        self.BodyLabel.setGeometry(QtCore.QRect(20, 40, 150, 20))
-        self.BodyLabel.setObjectName("BodyLabel")
-        self.SubtitleLabel_19 = SubtitleLabel(self.CardWidget)
-        self.SubtitleLabel_19.setGeometry(QtCore.QRect(20, 10, 150, 30))
-        self.SubtitleLabel_19.setObjectName("SubtitleLabel_19")
-        self.ElevatedCardWidget = ElevatedCardWidget(self.scrollAreaWidgetContents)
-        self.ElevatedCardWidget.setGeometry(QtCore.QRect(20, 80, 331, 351))
-        self.ElevatedCardWidget.setObjectName("ElevatedCardWidget")
-        self.EditableComboBox_6 = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox_6.setGeometry(QtCore.QRect(140, 295, 100, 35))
-        self.EditableComboBox_6.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_6.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_6.setObjectName("EditableComboBox_6")
-        self.StrongBodyLabel_3 = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel_3.setGeometry(QtCore.QRect(20, 130, 100, 20))
-        self.StrongBodyLabel_3.setObjectName("StrongBodyLabel_3")
-        self.CaptionLabel_3 = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel_3.setGeometry(QtCore.QRect(20, 150, 91, 16))
-        self.CaptionLabel_3.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_3.setObjectName("CaptionLabel_3")
-        self.EditableComboBox_3 = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox_3.setGeometry(QtCore.QRect(140, 130, 100, 35))
-        self.EditableComboBox_3.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_3.setObjectName("EditableComboBox_3")
-        self.EditableComboBox_4 = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox_4.setGeometry(QtCore.QRect(140, 185, 100, 35))
-        self.EditableComboBox_4.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_4.setObjectName("EditableComboBox_4")
-        self.CaptionLabel_2 = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel_2.setGeometry(QtCore.QRect(20, 95, 70, 16))
-        self.CaptionLabel_2.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_2.setObjectName("CaptionLabel_2")
-        self.StrongBodyLabel = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel.setGeometry(QtCore.QRect(20, 20, 100, 20))
-        self.StrongBodyLabel.setObjectName("StrongBodyLabel")
-        self.CaptionLabel_5 = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel_5.setGeometry(QtCore.QRect(20, 260, 91, 16))
-        self.CaptionLabel_5.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_5.setObjectName("CaptionLabel_5")
-        self.EditableComboBox_2 = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox_2.setGeometry(QtCore.QRect(140, 75, 100, 35))
-        self.EditableComboBox_2.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_2.setObjectName("EditableComboBox_2")
-        self.StrongBodyLabel_4 = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel_4.setGeometry(QtCore.QRect(20, 185, 100, 20))
-        self.StrongBodyLabel_4.setObjectName("StrongBodyLabel_4")
-        self.StrongBodyLabel_2 = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel_2.setGeometry(QtCore.QRect(20, 75, 100, 20))
-        self.StrongBodyLabel_2.setObjectName("StrongBodyLabel_2")
-        self.EditableComboBox_5 = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox_5.setGeometry(QtCore.QRect(140, 240, 100, 35))
-        self.EditableComboBox_5.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_5.setObjectName("EditableComboBox_5")
-        self.StrongBodyLabel_6 = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel_6.setGeometry(QtCore.QRect(20, 295, 100, 20))
-        self.StrongBodyLabel_6.setObjectName("StrongBodyLabel_6")
-        self.CaptionLabel_4 = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel_4.setGeometry(QtCore.QRect(20, 205, 91, 16))
-        self.CaptionLabel_4.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_4.setObjectName("CaptionLabel_4")
-        self.CaptionLabel = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel.setGeometry(QtCore.QRect(20, 40, 70, 16))
-        self.CaptionLabel.setStyleSheet("color: rgb(116, 120, 122);")
-        self.CaptionLabel.setObjectName("CaptionLabel")
-        self.StrongBodyLabel_5 = StrongBodyLabel(self.ElevatedCardWidget)
-        self.StrongBodyLabel_5.setGeometry(QtCore.QRect(20, 240, 100, 20))
-        self.StrongBodyLabel_5.setObjectName("StrongBodyLabel_5")
-        self.CaptionLabel_6 = CaptionLabel(self.ElevatedCardWidget)
-        self.CaptionLabel_6.setGeometry(QtCore.QRect(20, 315, 91, 16))
-        self.CaptionLabel_6.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_6.setObjectName("CaptionLabel_6")
-        self.EditableComboBox = EditableComboBox(self.ElevatedCardWidget)
-        self.EditableComboBox.setGeometry(QtCore.QRect(140, 20, 100, 35))
+        self.SubtitleLabel_EN = BodyLabel(self.scrollAreaWidgetContents)
+        self.SubtitleLabel_EN.setGeometry(QtCore.QRect(0, 30, 150, 20))
+        self.SubtitleLabel_EN.setObjectName("SubtitleLabel_EN")
+        self.SubtitleLabel_CN = SubtitleLabel(self.scrollAreaWidgetContents)
+        self.SubtitleLabel_CN.setGeometry(QtCore.QRect(0, 0, 150, 30))
+        self.SubtitleLabel_CN.setObjectName("SubtitleLabel_CN")
+        self.BasicParaArea = SimpleCardWidget(self.scrollAreaWidgetContents)
+        self.BasicParaArea.setGeometry(QtCore.QRect(0, 60, 651, 371))
+        self.BasicParaArea.setObjectName("BasicParaArea")
+        self.MaxEpoch = QtWidgets.QWidget(self.BasicParaArea)
+        self.MaxEpoch.setGeometry(QtCore.QRect(10, 10, 631, 41))
+        self.MaxEpoch.setStyleSheet("QWidget:hover{\n"
+"    background: rgba(20,140,211,0.1);\n"
+"    border-radius: 7px;\n"
+"}")
+        self.MaxEpoch.setObjectName("MaxEpoch")
+        self.EditableComboBox = EditableComboBox(self.MaxEpoch)
+        self.EditableComboBox.setGeometry(QtCore.QRect(470, 3, 150, 35))
         self.EditableComboBox.setMinimumSize(QtCore.QSize(0, 35))
         self.EditableComboBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.EditableComboBox.setObjectName("EditableComboBox")
-        self.CardWidget_2 = CardWidget(self.scrollAreaWidgetContents)
-        self.CardWidget_2.setGeometry(QtCore.QRect(20, 440, 381, 71))
-        self.CardWidget_2.setObjectName("CardWidget_2")
-        self.BodyLabel_2 = BodyLabel(self.CardWidget_2)
-        self.BodyLabel_2.setGeometry(QtCore.QRect(20, 40, 150, 20))
-        self.BodyLabel_2.setObjectName("BodyLabel_2")
-        self.SubtitleLabel_20 = SubtitleLabel(self.CardWidget_2)
-        self.SubtitleLabel_20.setGeometry(QtCore.QRect(20, 10, 150, 30))
-        self.SubtitleLabel_20.setObjectName("SubtitleLabel_20")
-        self.ElevatedCardWidget_2 = ElevatedCardWidget(self.scrollAreaWidgetContents)
-        self.ElevatedCardWidget_2.setGeometry(QtCore.QRect(20, 510, 381, 381))
-        self.ElevatedCardWidget_2.setObjectName("ElevatedCardWidget_2")
-        self.EditableComboBox_7 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_7.setGeometry(QtCore.QRect(70, 270, 111, 35))
-        self.EditableComboBox_7.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_7.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_7.setObjectName("EditableComboBox_7")
-        self.StrongBodyLabel_7 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_7.setGeometry(QtCore.QRect(20, 130, 100, 20))
-        self.StrongBodyLabel_7.setObjectName("StrongBodyLabel_7")
-        self.CaptionLabel_7 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_7.setGeometry(QtCore.QRect(20, 150, 91, 16))
-        self.CaptionLabel_7.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_7.setObjectName("CaptionLabel_7")
-        self.EditableComboBox_8 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_8.setGeometry(QtCore.QRect(20, 170, 100, 35))
-        self.EditableComboBox_8.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_8.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_8.setObjectName("EditableComboBox_8")
-        self.EditableComboBox_9 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_9.setGeometry(QtCore.QRect(140, 170, 100, 35))
-        self.EditableComboBox_9.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_9.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_9.setObjectName("EditableComboBox_9")
-        self.CaptionLabel_8 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_8.setGeometry(QtCore.QRect(20, 95, 91, 16))
-        self.CaptionLabel_8.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_8.setObjectName("CaptionLabel_8")
-        self.StrongBodyLabel_8 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_8.setGeometry(QtCore.QRect(20, 20, 100, 20))
-        self.StrongBodyLabel_8.setObjectName("StrongBodyLabel_8")
-        self.CaptionLabel_9 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_9.setGeometry(QtCore.QRect(30, 240, 91, 16))
-        self.CaptionLabel_9.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_9.setObjectName("CaptionLabel_9")
-        self.EditableComboBox_10 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_10.setGeometry(QtCore.QRect(140, 75, 160, 35))
-        self.EditableComboBox_10.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_10.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_10.setObjectName("EditableComboBox_10")
-        self.StrongBodyLabel_9 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_9.setGeometry(QtCore.QRect(140, 130, 100, 20))
-        self.StrongBodyLabel_9.setObjectName("StrongBodyLabel_9")
-        self.StrongBodyLabel_10 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_10.setGeometry(QtCore.QRect(20, 75, 100, 20))
-        self.StrongBodyLabel_10.setObjectName("StrongBodyLabel_10")
-        self.EditableComboBox_11 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_11.setGeometry(QtCore.QRect(150, 220, 100, 35))
-        self.EditableComboBox_11.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_11.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_11.setObjectName("EditableComboBox_11")
-        self.StrongBodyLabel_11 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_11.setGeometry(QtCore.QRect(20, 270, 51, 20))
-        self.StrongBodyLabel_11.setObjectName("StrongBodyLabel_11")
-        self.CaptionLabel_10 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_10.setGeometry(QtCore.QRect(140, 150, 91, 16))
-        self.CaptionLabel_10.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_10.setObjectName("CaptionLabel_10")
-        self.CaptionLabel_11 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_11.setGeometry(QtCore.QRect(20, 40, 70, 16))
-        self.CaptionLabel_11.setStyleSheet("color: rgb(116, 120, 122);")
-        self.CaptionLabel_11.setObjectName("CaptionLabel_11")
-        self.StrongBodyLabel_12 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_12.setGeometry(QtCore.QRect(30, 220, 100, 20))
-        self.StrongBodyLabel_12.setObjectName("StrongBodyLabel_12")
-        self.CaptionLabel_12 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_12.setGeometry(QtCore.QRect(20, 290, 51, 16))
-        self.CaptionLabel_12.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_12.setObjectName("CaptionLabel_12")
-        self.EditableComboBox_12 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_12.setGeometry(QtCore.QRect(140, 20, 160, 35))
-        self.EditableComboBox_12.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_12.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_12.setObjectName("EditableComboBox_12")
-        self.EditableComboBox_13 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_13.setGeometry(QtCore.QRect(260, 170, 100, 35))
-        self.EditableComboBox_13.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_13.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_13.setObjectName("EditableComboBox_13")
-        self.StrongBodyLabel_13 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_13.setGeometry(QtCore.QRect(260, 130, 100, 20))
-        self.StrongBodyLabel_13.setObjectName("StrongBodyLabel_13")
-        self.CaptionLabel_13 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_13.setGeometry(QtCore.QRect(260, 150, 91, 16))
-        self.CaptionLabel_13.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_13.setObjectName("CaptionLabel_13")
-        self.EditableComboBox_17 = EditableComboBox(self.ElevatedCardWidget_2)
-        self.EditableComboBox_17.setGeometry(QtCore.QRect(70, 320, 111, 35))
-        self.EditableComboBox_17.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_17.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_17.setObjectName("EditableComboBox_17")
-        self.CaptionLabel_14 = CaptionLabel(self.ElevatedCardWidget_2)
-        self.CaptionLabel_14.setGeometry(QtCore.QRect(20, 340, 51, 16))
-        self.CaptionLabel_14.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_14.setObjectName("CaptionLabel_14")
-        self.StrongBodyLabel_14 = StrongBodyLabel(self.ElevatedCardWidget_2)
-        self.StrongBodyLabel_14.setGeometry(QtCore.QRect(20, 320, 41, 20))
-        self.StrongBodyLabel_14.setObjectName("StrongBodyLabel_14")
-        self.CardWidget_3 = CardWidget(self.scrollAreaWidgetContents)
-        self.CardWidget_3.setGeometry(QtCore.QRect(20, 910, 461, 71))
-        self.CardWidget_3.setObjectName("CardWidget_3")
-        self.BodyLabel_3 = BodyLabel(self.CardWidget_3)
-        self.BodyLabel_3.setGeometry(QtCore.QRect(20, 40, 150, 20))
-        self.BodyLabel_3.setObjectName("BodyLabel_3")
-        self.SubtitleLabel_21 = SubtitleLabel(self.CardWidget_3)
-        self.SubtitleLabel_21.setGeometry(QtCore.QRect(20, 10, 150, 30))
-        self.SubtitleLabel_21.setObjectName("SubtitleLabel_21")
-        self.ElevatedCardWidget_3 = ElevatedCardWidget(self.scrollAreaWidgetContents)
-        self.ElevatedCardWidget_3.setGeometry(QtCore.QRect(20, 980, 461, 241))
-        self.ElevatedCardWidget_3.setObjectName("ElevatedCardWidget_3")
-        self.StrongBodyLabel_15 = StrongBodyLabel(self.ElevatedCardWidget_3)
-        self.StrongBodyLabel_15.setGeometry(QtCore.QRect(20, 130, 100, 20))
-        self.StrongBodyLabel_15.setObjectName("StrongBodyLabel_15")
-        self.CaptionLabel_15 = CaptionLabel(self.ElevatedCardWidget_3)
-        self.CaptionLabel_15.setGeometry(QtCore.QRect(20, 150, 91, 16))
-        self.CaptionLabel_15.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_15.setObjectName("CaptionLabel_15")
-        self.EditableComboBox_15 = EditableComboBox(self.ElevatedCardWidget_3)
-        self.EditableComboBox_15.setGeometry(QtCore.QRect(140, 130, 151, 35))
-        self.EditableComboBox_15.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_15.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_15.setObjectName("EditableComboBox_15")
-        self.EditableComboBox_16 = EditableComboBox(self.ElevatedCardWidget_3)
-        self.EditableComboBox_16.setGeometry(QtCore.QRect(140, 185, 171, 35))
-        self.EditableComboBox_16.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_16.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_16.setObjectName("EditableComboBox_16")
-        self.CaptionLabel_16 = CaptionLabel(self.ElevatedCardWidget_3)
-        self.CaptionLabel_16.setGeometry(QtCore.QRect(20, 95, 70, 16))
-        self.CaptionLabel_16.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_16.setObjectName("CaptionLabel_16")
-        self.StrongBodyLabel_16 = StrongBodyLabel(self.ElevatedCardWidget_3)
-        self.StrongBodyLabel_16.setGeometry(QtCore.QRect(20, 20, 100, 20))
-        self.StrongBodyLabel_16.setObjectName("StrongBodyLabel_16")
-        self.EditableComboBox_18 = EditableComboBox(self.ElevatedCardWidget_3)
-        self.EditableComboBox_18.setGeometry(QtCore.QRect(140, 75, 111, 35))
-        self.EditableComboBox_18.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_18.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_18.setObjectName("EditableComboBox_18")
-        self.StrongBodyLabel_17 = StrongBodyLabel(self.ElevatedCardWidget_3)
-        self.StrongBodyLabel_17.setGeometry(QtCore.QRect(20, 185, 100, 20))
-        self.StrongBodyLabel_17.setObjectName("StrongBodyLabel_17")
-        self.StrongBodyLabel_18 = StrongBodyLabel(self.ElevatedCardWidget_3)
-        self.StrongBodyLabel_18.setGeometry(QtCore.QRect(20, 75, 100, 20))
-        self.StrongBodyLabel_18.setObjectName("StrongBodyLabel_18")
-        self.CaptionLabel_18 = CaptionLabel(self.ElevatedCardWidget_3)
-        self.CaptionLabel_18.setGeometry(QtCore.QRect(20, 205, 91, 16))
-        self.CaptionLabel_18.setProperty("lightColor", QtGui.QColor(116, 120, 122))
-        self.CaptionLabel_18.setObjectName("CaptionLabel_18")
-        self.CaptionLabel_19 = CaptionLabel(self.ElevatedCardWidget_3)
-        self.CaptionLabel_19.setGeometry(QtCore.QRect(20, 40, 111, 16))
-        self.CaptionLabel_19.setStyleSheet("color: rgb(116, 120, 122);")
-        self.CaptionLabel_19.setObjectName("CaptionLabel_19")
-        self.EditableComboBox_20 = EditableComboBox(self.ElevatedCardWidget_3)
-        self.EditableComboBox_20.setGeometry(QtCore.QRect(140, 20, 271, 35))
-        self.EditableComboBox_20.setMinimumSize(QtCore.QSize(0, 35))
-        self.EditableComboBox_20.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.EditableComboBox_20.setObjectName("EditableComboBox_20")
-        self.SmoothScrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.CaptionLabel = CaptionLabel(self.MaxEpoch)
+        self.CaptionLabel.setGeometry(QtCore.QRect(10, 20, 70, 16))
+        self.CaptionLabel.setStyleSheet("color: rgb(116, 120, 122);")
+        self.CaptionLabel.setObjectName("CaptionLabel")
+        self.StrongBodyLabel = StrongBodyLabel(self.MaxEpoch)
+        self.StrongBodyLabel.setGeometry(QtCore.QRect(10, 3, 100, 20))
+        self.StrongBodyLabel.setObjectName("StrongBodyLabel")
+        self.MaxEpoch_2 = QtWidgets.QWidget(self.BasicParaArea)
+        self.MaxEpoch_2.setGeometry(QtCore.QRect(10, 50, 631, 41))
+        self.MaxEpoch_2.setStyleSheet("QWidget:hover{\n"
+"    background: rgba(20,140,211,0.1);\n"
+"    border-radius: 7px;\n"
+"}")
+        self.MaxEpoch_2.setObjectName("MaxEpoch_2")
+        self.EditableComboBox_2 = EditableComboBox(self.MaxEpoch_2)
+        self.EditableComboBox_2.setGeometry(QtCore.QRect(470, 3, 150, 35))
+        self.EditableComboBox_2.setMinimumSize(QtCore.QSize(0, 35))
+        self.EditableComboBox_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.EditableComboBox_2.setObjectName("EditableComboBox_2")
+        self.CaptionLabel_2 = CaptionLabel(self.MaxEpoch_2)
+        self.CaptionLabel_2.setGeometry(QtCore.QRect(10, 20, 70, 16))
+        self.CaptionLabel_2.setStyleSheet("color: rgb(116, 120, 122);")
+        self.CaptionLabel_2.setObjectName("CaptionLabel_2")
+        self.StrongBodyLabel_2 = StrongBodyLabel(self.MaxEpoch_2)
+        self.StrongBodyLabel_2.setGeometry(QtCore.QRect(10, 3, 100, 20))
+        self.StrongBodyLabel_2.setObjectName("StrongBodyLabel_2")
+        self.MaxEpoch_3 = QtWidgets.QWidget(self.BasicParaArea)
+        self.MaxEpoch_3.setGeometry(QtCore.QRect(10, 130, 631, 41))
+        self.MaxEpoch_3.setStyleSheet("QWidget:hover{\n"
+"    background: rgba(20,140,211,0.1);\n"
+"    border-radius: 7px;\n"
+"}")
+        self.MaxEpoch_3.setObjectName("MaxEpoch_3")
+        self.EditableComboBox_3 = EditableComboBox(self.MaxEpoch_3)
+        self.EditableComboBox_3.setGeometry(QtCore.QRect(470, 3, 150, 35))
+        self.EditableComboBox_3.setMinimumSize(QtCore.QSize(0, 35))
+        self.EditableComboBox_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.EditableComboBox_3.setObjectName("EditableComboBox_3")
+        self.CaptionLabel_3 = CaptionLabel(self.MaxEpoch_3)
+        self.CaptionLabel_3.setGeometry(QtCore.QRect(10, 20, 70, 16))
+        self.CaptionLabel_3.setStyleSheet("color: rgb(116, 120, 122);")
+        self.CaptionLabel_3.setObjectName("CaptionLabel_3")
+        self.StrongBodyLabel_3 = StrongBodyLabel(self.MaxEpoch_3)
+        self.StrongBodyLabel_3.setGeometry(QtCore.QRect(10, 3, 100, 20))
+        self.StrongBodyLabel_3.setObjectName("StrongBodyLabel_3")
+        self.MaxEpoch_4 = QtWidgets.QWidget(self.BasicParaArea)
+        self.MaxEpoch_4.setGeometry(QtCore.QRect(10, 90, 631, 41))
+        self.MaxEpoch_4.setStyleSheet("QWidget:hover{\n"
+"    background: rgba(20,140,211,0.1);\n"
+"    border-radius: 7px;\n"
+"}")
+        self.MaxEpoch_4.setObjectName("MaxEpoch_4")
+        self.EditableComboBox_4 = EditableComboBox(self.MaxEpoch_4)
+        self.EditableComboBox_4.setGeometry(QtCore.QRect(470, 3, 150, 35))
+        self.EditableComboBox_4.setMinimumSize(QtCore.QSize(0, 35))
+        self.EditableComboBox_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.EditableComboBox_4.setObjectName("EditableComboBox_4")
+        self.CaptionLabel_4 = CaptionLabel(self.MaxEpoch_4)
+        self.CaptionLabel_4.setGeometry(QtCore.QRect(10, 20, 70, 16))
+        self.CaptionLabel_4.setStyleSheet("color: rgb(116, 120, 122);")
+        self.CaptionLabel_4.setObjectName("CaptionLabel_4")
+        self.StrongBodyLabel_4 = StrongBodyLabel(self.MaxEpoch_4)
+        self.StrongBodyLabel_4.setGeometry(QtCore.QRect(10, 3, 100, 20))
+        self.StrongBodyLabel_4.setObjectName("StrongBodyLabel_4")
+        self.MainArea.setWidget(self.scrollAreaWidgetContents)
 
         self.retranslateUi(Trainer_Page)
         QtCore.QMetaObject.connectSlotsByName(Trainer_Page)
@@ -296,68 +740,22 @@ class Ui_Trainer_Page(object):
     def retranslateUi(self, Trainer_Page):
         _translate = QtCore.QCoreApplication.translate
         Trainer_Page.setWindowTitle(_translate("Trainer_Page", "Form"))
-        self.DisplayLabel.setText(_translate("Trainer_Page", "训练参数设定与提交"))
+        self.PageTitle.setText(_translate("Trainer_Page", "训练参数设定与提交"))
         self.TitleLabel.setText(_translate("Trainer_Page", "Trainer Parameters and Submit"))
-        self.PrimaryPushButton.setText(_translate("Trainer_Page", "SUBMIT"))
-        self.BodyLabel.setText(_translate("Trainer_Page", "Basic Parameters"))
-        self.SubtitleLabel_19.setText(_translate("Trainer_Page", "基本参数"))
-        self.EditableComboBox_6.setText(_translate("Trainer_Page", "0"))
-        self.StrongBodyLabel_3.setText(_translate("Trainer_Page", "随机种子"))
-        self.CaptionLabel_3.setText(_translate("Trainer_Page", "Random Seed"))
-        self.EditableComboBox_3.setText(_translate("Trainer_Page", "42"))
-        self.EditableComboBox_4.setText(_translate("Trainer_Page", "4"))
-        self.CaptionLabel_2.setText(_translate("Trainer_Page", "Early Stop"))
-        self.StrongBodyLabel.setText(_translate("Trainer_Page", "最大训练轮次"))
-        self.CaptionLabel_5.setText(_translate("Trainer_Page", "Learning Rate"))
-        self.EditableComboBox_2.setText(_translate("Trainer_Page", "200"))
-        self.StrongBodyLabel_4.setText(_translate("Trainer_Page", "批次规模"))
-        self.StrongBodyLabel_2.setText(_translate("Trainer_Page", "早停阈值轮次"))
-        self.EditableComboBox_5.setText(_translate("Trainer_Page", "0.001"))
-        self.StrongBodyLabel_6.setText(_translate("Trainer_Page", "显卡设备编号"))
-        self.CaptionLabel_4.setText(_translate("Trainer_Page", "Batch SIze"))
-        self.CaptionLabel.setText(_translate("Trainer_Page", "Max Epoch"))
-        self.StrongBodyLabel_5.setText(_translate("Trainer_Page", "学习率"))
-        self.CaptionLabel_6.setText(_translate("Trainer_Page", "Device"))
+        self.Submit.setText(_translate("Trainer_Page", "SUBMIT"))
+        self.SubtitleLabel_EN.setText(_translate("Trainer_Page", "Basic Parameters"))
+        self.SubtitleLabel_CN.setText(_translate("Trainer_Page", "基本参数"))
         self.EditableComboBox.setText(_translate("Trainer_Page", "2000"))
-        self.BodyLabel_2.setText(_translate("Trainer_Page", "Model Parameters"))
-        self.SubtitleLabel_20.setText(_translate("Trainer_Page", "模型参数"))
-        self.EditableComboBox_7.setText(_translate("Trainer_Page", "[4,4,4,4]"))
-        self.StrongBodyLabel_7.setText(_translate("Trainer_Page", "输入维度"))
-        self.CaptionLabel_7.setText(_translate("Trainer_Page", "Input Channels"))
-        self.EditableComboBox_8.setText(_translate("Trainer_Page", "6"))
-        self.EditableComboBox_9.setText(_translate("Trainer_Page", "1"))
-        self.CaptionLabel_8.setText(_translate("Trainer_Page", "Loss Function"))
-        self.StrongBodyLabel_8.setText(_translate("Trainer_Page", "模型"))
-        self.CaptionLabel_9.setText(_translate("Trainer_Page", "Figure Size"))
-        self.EditableComboBox_10.setText(_translate("Trainer_Page", "Lovasz_Multical"))
-        self.StrongBodyLabel_9.setText(_translate("Trainer_Page", "扩展维度"))
-        self.StrongBodyLabel_10.setText(_translate("Trainer_Page", "损失函数"))
-        self.EditableComboBox_11.setText(_translate("Trainer_Page", "512"))
-        self.StrongBodyLabel_11.setText(_translate("Trainer_Page", "层数"))
-        self.CaptionLabel_10.setText(_translate("Trainer_Page", "Dim Channels"))
-        self.CaptionLabel_11.setText(_translate("Trainer_Page", "Model"))
-        self.StrongBodyLabel_12.setText(_translate("Trainer_Page", "图像大小"))
-        self.CaptionLabel_12.setText(_translate("Trainer_Page", "Depth"))
-        self.EditableComboBox_12.setText(_translate("Trainer_Page", "Unet"))
-        self.EditableComboBox_13.setText(_translate("Trainer_Page", "1"))
-        self.StrongBodyLabel_13.setText(_translate("Trainer_Page", "输出维度"))
-        self.CaptionLabel_13.setText(_translate("Trainer_Page", "Output Channels"))
-        self.EditableComboBox_17.setText(_translate("Trainer_Page", "[2,4,8,16]"))
-        self.CaptionLabel_14.setText(_translate("Trainer_Page", "Head"))
-        self.StrongBodyLabel_14.setText(_translate("Trainer_Page", "头数"))
-        self.BodyLabel_3.setText(_translate("Trainer_Page", "Pathway Parameters"))
-        self.SubtitleLabel_21.setText(_translate("Trainer_Page", "路径参数"))
-        self.StrongBodyLabel_15.setText(_translate("Trainer_Page", "输出路径"))
-        self.CaptionLabel_15.setText(_translate("Trainer_Page", "Output Pathway"))
-        self.EditableComboBox_15.setText(_translate("Trainer_Page", "42"))
-        self.EditableComboBox_16.setText(_translate("Trainer_Page", "4"))
-        self.CaptionLabel_16.setText(_translate("Trainer_Page", "Data Set"))
-        self.StrongBodyLabel_16.setText(_translate("Trainer_Page", "带标签图像"))
-        self.EditableComboBox_18.setText(_translate("Trainer_Page", "200"))
-        self.StrongBodyLabel_17.setText(_translate("Trainer_Page", "批次规模"))
-        self.StrongBodyLabel_18.setText(_translate("Trainer_Page", "数据集"))
-        self.CaptionLabel_18.setText(_translate("Trainer_Page", "Batch SIze"))
-        self.CaptionLabel_19.setText(_translate("Trainer_Page", "Labeled Images"))
-        self.EditableComboBox_20.setText(_translate("Trainer_Page", "2000"))
-from qfluentwidgets import BodyLabel, CaptionLabel, CardWidget, DisplayLabel, EditableComboBox, ElevatedCardWidget, PrimaryPushButton, SmoothScrollArea, StrongBodyLabel, SubtitleLabel, TitleLabel
+        self.CaptionLabel.setText(_translate("Trainer_Page", "Max Epoch"))
+        self.StrongBodyLabel.setText(_translate("Trainer_Page", "最大训练轮次"))
+        self.EditableComboBox_2.setText(_translate("Trainer_Page", "2000"))
+        self.CaptionLabel_2.setText(_translate("Trainer_Page", "Max Epoch"))
+        self.StrongBodyLabel_2.setText(_translate("Trainer_Page", "最大训练轮次"))
+        self.EditableComboBox_3.setText(_translate("Trainer_Page", "2000"))
+        self.CaptionLabel_3.setText(_translate("Trainer_Page", "Max Epoch"))
+        self.StrongBodyLabel_3.setText(_translate("Trainer_Page", "最大训练轮次"))
+        self.EditableComboBox_4.setText(_translate("Trainer_Page", "2000"))
+        self.CaptionLabel_4.setText(_translate("Trainer_Page", "Max Epoch"))
+        self.StrongBodyLabel_4.setText(_translate("Trainer_Page", "最大训练轮次"))
+from qfluentwidgets import BodyLabel, CaptionLabel, DisplayLabel, EditableComboBox, PrimaryPushButton, SimpleCardWidget, SmoothScrollArea, StrongBodyLabel, SubtitleLabel, TitleLabel
 import resource_rc

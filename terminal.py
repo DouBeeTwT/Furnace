@@ -53,13 +53,6 @@ class Demo(SplitFluentWindow):
         # trainer page
         self.trainer_page = Trainer_Page(self)
         self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
-        self.trainer_page.SmoothScrollArea.setStyleSheet("""
-             SmoothScrollArea{
-                background: transparent;
-                border: 0px solid #f9f9f9;
-             }
-        """)
-        self.trainer_page.SmoothScrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         # Monitor_Page
         self.monitor_page = Monitor_Page(self)
