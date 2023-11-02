@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from build.config import *
+from resources.UI.Ui_config import Nodes_Items
 
 class Ui_Information_Page(object):
     def setupUi(self, Information_Page):
@@ -24,15 +25,15 @@ class Ui_Information_Page(object):
         self.BodyLabel = BodyLabel(Information_Page)
         self.BodyLabel.setObjectName("BodyLabel")
         self.Info_head.addWidget(self.BodyLabel)
-        self.LineEdit = LineEdit(Information_Page)
-        self.LineEdit.setObjectName("LineEdit")
-        self.Info_head.addWidget(self.LineEdit)
+        self.UsernameBox = LineEdit(Information_Page)
+        self.UsernameBox.setObjectName("UsernameBox")
+        self.Info_head.addWidget(self.UsernameBox)
         self.BodyLabel_2 = BodyLabel(Information_Page)
         self.BodyLabel_2.setObjectName("BodyLabel_2")
         self.Info_head.addWidget(self.BodyLabel_2)
-        self.PasswordLineEdit = PasswordLineEdit(Information_Page)
-        self.PasswordLineEdit.setObjectName("PasswordLineEdit")
-        self.Info_head.addWidget(self.PasswordLineEdit)
+        self.PasswordBox = PasswordLineEdit(Information_Page)
+        self.PasswordBox.setObjectName("PasswordBox")
+        self.Info_head.addWidget(self.PasswordBox)
         self.BodyLabel_3 = BodyLabel(Information_Page)
         self.BodyLabel_3.setObjectName("BodyLabel_3")
         self.Info_head.addWidget(self.BodyLabel_3)
@@ -184,6 +185,9 @@ class Ui_Information_Page(object):
         self.GPU_CUDA.setStretch(1, 1)
         self.verticalLayout_4.addLayout(self.GPU_CUDA)
 
+        self.UsernameBox.setText(login["Username"])
+        self.PasswordBox.setText(login["Password"])
+        self.ComboBox.addItems(Nodes_Items)
         self.retranslateUi(Information_Page)
         QtCore.QMetaObject.connectSlotsByName(Information_Page)
 

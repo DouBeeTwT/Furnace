@@ -39,7 +39,7 @@
       </widget>
      </item>
      <item>
-      <widget class="LineEdit" name="LineEdit"/>
+      <widget class="LineEdit" name="UsernameBox"/>
      </item>
      <item>
       <widget class="BodyLabel" name="BodyLabel_2">
@@ -49,7 +49,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PasswordLineEdit" name="PasswordLineEdit"/>
+      <widget class="PasswordLineEdit" name="PasswordBox"/>
      </item>
      <item>
       <widget class="BodyLabel" name="BodyLabel_3">

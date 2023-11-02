@@ -18,9 +18,9 @@ class Ui_Trainer_Page(object):
         self.PageTitle = DisplayLabel(Trainer_Page)
         self.PageTitle.setGeometry(QtCore.QRect(40, 60, 650, 51))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
+        font.setFamily("微软雅黑")
         font.setPointSize(32)
-        font.setBold(False)
+        font.setBold(True)
         self.PageTitle.setFont(font)
         self.PageTitle.setProperty("lightColor", QtGui.QColor(20, 140, 211))
         self.PageTitle.setObjectName("PageTitle")
@@ -33,7 +33,7 @@ class Ui_Trainer_Page(object):
         self.TitleLabel.setFont(font)
         self.TitleLabel.setObjectName("TitleLabel")
         self.MainArea = SmoothScrollArea(Trainer_Page)
-        self.MainArea.setGeometry(QtCore.QRect(40, 180, 721, 690))
+        self.MainArea.setGeometry(QtCore.QRect(40, 149, 721, 690))
         self.MainArea.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.MainArea.setStyleSheet("background-color: transparent;\n"
 "border: 0px solid;")
@@ -47,13 +47,18 @@ class Ui_Trainer_Page(object):
         self.scrollAreaWidgetContents.setStyleSheet("")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.SubtitleLabel_1_EN = BodyLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_1_EN.setGeometry(QtCore.QRect(0, 30, 150, 20))
+        self.SubtitleLabel_1_EN.setGeometry(QtCore.QRect(0, 50, 150, 20))
         self.SubtitleLabel_1_EN.setObjectName("SubtitleLabel_1_EN")
         self.SubtitleLabel_1_CN = SubtitleLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_1_CN.setGeometry(QtCore.QRect(0, 0, 150, 30))
+        self.SubtitleLabel_1_CN.setGeometry(QtCore.QRect(0, 20, 150, 30))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(15)
+        font.setBold(True)
+        self.SubtitleLabel_1_CN.setFont(font)
         self.SubtitleLabel_1_CN.setObjectName("SubtitleLabel_1_CN")
         self.BasicParaArea = SimpleCardWidget(self.scrollAreaWidgetContents)
-        self.BasicParaArea.setGeometry(QtCore.QRect(0, 60, 720, 260))
+        self.BasicParaArea.setGeometry(QtCore.QRect(0, 80, 720, 260))
         self.BasicParaArea.setObjectName("BasicParaArea")
         self.MaxEpochArea = QtWidgets.QWidget(self.BasicParaArea)
         self.MaxEpochArea.setGeometry(QtCore.QRect(10, 10, 700, 41))
@@ -151,22 +156,321 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_3.addWidget(self.CaptionLabel_4)
         spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem7)
+        self.RandomSeedBox = LineEdit(self.RandomSeedArea)
+        self.RandomSeedBox.setMinimumSize(QtCore.QSize(121, 33))
+        self.RandomSeedBox.setMaximumSize(QtCore.QSize(121, 33))
+        self.RandomSeedBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.RandomSeedBox.setObjectName("RandomSeedBox")
+        self.horizontalLayout_3.addWidget(self.RandomSeedBox)
         self.RandomSeedButton = PrimaryPushButton(self.RandomSeedArea)
-        self.RandomSeedButton.setMinimumSize(QtCore.QSize(35, 0))
-        self.RandomSeedButton.setMaximumSize(QtCore.QSize(35, 16777215))
+        self.RandomSeedButton.setMinimumSize(QtCore.QSize(28, 0))
+        self.RandomSeedButton.setMaximumSize(QtCore.QSize(28, 16777215))
+        self.RandomSeedButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.RandomSeedButton.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 5px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.RandomSeedButton.setText("")
         self.RandomSeedButton.setObjectName("RandomSeedButton")
         self.horizontalLayout_3.addWidget(self.RandomSeedButton)
         spacerItem8 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem8)
-        self.RandomSeedBox = EditableComboBox(self.RandomSeedArea)
-        self.RandomSeedBox.setMinimumSize(QtCore.QSize(105, 35))
-        self.RandomSeedBox.setMaximumSize(QtCore.QSize(105, 33))
-        self.RandomSeedBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.RandomSeedBox.setObjectName("RandomSeedBox")
-        self.horizontalLayout_3.addWidget(self.RandomSeedBox)
-        spacerItem9 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem9)
         self.horizontalLayout_3.setStretch(3, 1)
         self.BatchSizeArea = QtWidgets.QWidget(self.BasicParaArea)
         self.BatchSizeArea.setGeometry(QtCore.QRect(10, 130, 700, 41))
@@ -179,8 +483,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        spacerItem10 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem10)
+        spacerItem9 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem9)
         self.MaxEpoch_CN_2 = StrongBodyLabel(self.BatchSizeArea)
         self.MaxEpoch_CN_2.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_2.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -192,16 +496,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_2.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_2.setObjectName("MaxEpoch_EN_2")
         self.horizontalLayout_4.addWidget(self.MaxEpoch_EN_2)
-        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem11)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem10)
         self.BatchSizeBox = EditableComboBox(self.BatchSizeArea)
         self.BatchSizeBox.setMinimumSize(QtCore.QSize(150, 35))
         self.BatchSizeBox.setMaximumSize(QtCore.QSize(150, 33))
         self.BatchSizeBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.BatchSizeBox.setObjectName("BatchSizeBox")
         self.horizontalLayout_4.addWidget(self.BatchSizeBox)
-        spacerItem12 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem12)
+        spacerItem11 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem11)
         self.horizontalLayout_4.setStretch(3, 1)
         self.LearningRateArea = QtWidgets.QWidget(self.BasicParaArea)
         self.LearningRateArea.setGeometry(QtCore.QRect(10, 170, 700, 41))
@@ -214,8 +518,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        spacerItem13 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_5.addItem(spacerItem13)
+        spacerItem12 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem12)
         self.MaxEpoch_CN_3 = StrongBodyLabel(self.LearningRateArea)
         self.MaxEpoch_CN_3.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_3.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -227,16 +531,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_3.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_3.setObjectName("MaxEpoch_EN_3")
         self.horizontalLayout_5.addWidget(self.MaxEpoch_EN_3)
-        spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_5.addItem(spacerItem14)
+        spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem13)
         self.LearningRateBox = EditableComboBox(self.LearningRateArea)
         self.LearningRateBox.setMinimumSize(QtCore.QSize(150, 35))
         self.LearningRateBox.setMaximumSize(QtCore.QSize(150, 33))
         self.LearningRateBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.LearningRateBox.setObjectName("LearningRateBox")
         self.horizontalLayout_5.addWidget(self.LearningRateBox)
-        spacerItem15 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_5.addItem(spacerItem15)
+        spacerItem14 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem14)
         self.horizontalLayout_5.setStretch(3, 1)
         self.CudaDeviceArea = QtWidgets.QWidget(self.BasicParaArea)
         self.CudaDeviceArea.setGeometry(QtCore.QRect(10, 210, 700, 41))
@@ -249,8 +553,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        spacerItem16 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem16)
+        spacerItem15 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem15)
         self.MaxEpoch_CN_4 = StrongBodyLabel(self.CudaDeviceArea)
         self.MaxEpoch_CN_4.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_4.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -262,8 +566,8 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_4.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_4.setObjectName("MaxEpoch_EN_4")
         self.horizontalLayout_6.addWidget(self.MaxEpoch_EN_4)
-        spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem17)
+        spacerItem16 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem16)
         self.CudaDeviceBox = EditableComboBox(self.CudaDeviceArea)
         self.CudaDeviceBox.setEnabled(False)
         self.CudaDeviceBox.setMinimumSize(QtCore.QSize(150, 35))
@@ -271,17 +575,22 @@ class Ui_Trainer_Page(object):
         self.CudaDeviceBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.CudaDeviceBox.setObjectName("CudaDeviceBox")
         self.horizontalLayout_6.addWidget(self.CudaDeviceBox)
-        spacerItem18 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem18)
+        spacerItem17 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem17)
         self.horizontalLayout_6.setStretch(3, 1)
         self.SubtitleLabel_2_CN = SubtitleLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_2_CN.setGeometry(QtCore.QRect(0, 350, 150, 30))
+        self.SubtitleLabel_2_CN.setGeometry(QtCore.QRect(0, 370, 150, 30))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(15)
+        font.setBold(True)
+        self.SubtitleLabel_2_CN.setFont(font)
         self.SubtitleLabel_2_CN.setObjectName("SubtitleLabel_2_CN")
         self.SubtitleLabel_2_EN = BodyLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_2_EN.setGeometry(QtCore.QRect(0, 380, 150, 20))
+        self.SubtitleLabel_2_EN.setGeometry(QtCore.QRect(0, 400, 150, 20))
         self.SubtitleLabel_2_EN.setObjectName("SubtitleLabel_2_EN")
         self.ModelParaArea = SimpleCardWidget(self.scrollAreaWidgetContents)
-        self.ModelParaArea.setGeometry(QtCore.QRect(0, 410, 721, 221))
+        self.ModelParaArea.setGeometry(QtCore.QRect(0, 430, 721, 221))
         self.ModelParaArea.setObjectName("ModelParaArea")
         self.ModelArea = QtWidgets.QWidget(self.ModelParaArea)
         self.ModelArea.setGeometry(QtCore.QRect(10, 10, 700, 41))
@@ -294,8 +603,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        spacerItem19 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem19)
+        spacerItem18 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem18)
         self.MaxEpoch_CN_5 = StrongBodyLabel(self.ModelArea)
         self.MaxEpoch_CN_5.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_5.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -307,16 +616,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_5.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_5.setObjectName("MaxEpoch_EN_5")
         self.horizontalLayout_7.addWidget(self.MaxEpoch_EN_5)
-        spacerItem20 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem20)
+        spacerItem19 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem19)
         self.ModelBox = EditableComboBox(self.ModelArea)
         self.ModelBox.setMinimumSize(QtCore.QSize(150, 35))
         self.ModelBox.setMaximumSize(QtCore.QSize(150, 33))
         self.ModelBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.ModelBox.setObjectName("ModelBox")
         self.horizontalLayout_7.addWidget(self.ModelBox)
-        spacerItem21 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem21)
+        spacerItem20 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem20)
         self.horizontalLayout_7.setStretch(3, 1)
         self.LossFunctionArea = QtWidgets.QWidget(self.ModelParaArea)
         self.LossFunctionArea.setGeometry(QtCore.QRect(10, 50, 700, 41))
@@ -329,8 +638,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        spacerItem22 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem22)
+        spacerItem21 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_8.addItem(spacerItem21)
         self.StrongBodyLabel_3 = StrongBodyLabel(self.LossFunctionArea)
         self.StrongBodyLabel_3.setMinimumSize(QtCore.QSize(100, 0))
         self.StrongBodyLabel_3.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -342,16 +651,16 @@ class Ui_Trainer_Page(object):
         self.CaptionLabel_3.setStyleSheet("color: rgb(116, 120, 122);")
         self.CaptionLabel_3.setObjectName("CaptionLabel_3")
         self.horizontalLayout_8.addWidget(self.CaptionLabel_3)
-        spacerItem23 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem23)
+        spacerItem22 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_8.addItem(spacerItem22)
         self.LossFunctionBox = EditableComboBox(self.LossFunctionArea)
         self.LossFunctionBox.setMinimumSize(QtCore.QSize(150, 35))
         self.LossFunctionBox.setMaximumSize(QtCore.QSize(150, 33))
         self.LossFunctionBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.LossFunctionBox.setObjectName("LossFunctionBox")
         self.horizontalLayout_8.addWidget(self.LossFunctionBox)
-        spacerItem24 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem24)
+        spacerItem23 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_8.addItem(spacerItem23)
         self.horizontalLayout_8.setStretch(3, 1)
         self.DimChannelsArea = QtWidgets.QWidget(self.ModelParaArea)
         self.DimChannelsArea.setGeometry(QtCore.QRect(10, 130, 700, 41))
@@ -364,8 +673,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        spacerItem25 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem25)
+        spacerItem24 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem24)
         self.MaxEpoch_CN_6 = StrongBodyLabel(self.DimChannelsArea)
         self.MaxEpoch_CN_6.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_6.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -377,16 +686,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_6.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_6.setObjectName("MaxEpoch_EN_6")
         self.horizontalLayout_10.addWidget(self.MaxEpoch_EN_6)
-        spacerItem26 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem26)
+        spacerItem25 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem25)
         self.DimChannelsBox = EditableComboBox(self.DimChannelsArea)
         self.DimChannelsBox.setMinimumSize(QtCore.QSize(150, 35))
         self.DimChannelsBox.setMaximumSize(QtCore.QSize(150, 33))
         self.DimChannelsBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.DimChannelsBox.setObjectName("DimChannelsBox")
         self.horizontalLayout_10.addWidget(self.DimChannelsBox)
-        spacerItem27 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem27)
+        spacerItem26 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem26)
         self.horizontalLayout_10.setStretch(3, 1)
         self.OutputChannelsArea = QtWidgets.QWidget(self.ModelParaArea)
         self.OutputChannelsArea.setGeometry(QtCore.QRect(10, 170, 700, 41))
@@ -399,8 +708,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        spacerItem28 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem28)
+        spacerItem27 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem27)
         self.MaxEpoch_CN_7 = StrongBodyLabel(self.OutputChannelsArea)
         self.MaxEpoch_CN_7.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_7.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -412,16 +721,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_7.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_7.setObjectName("MaxEpoch_EN_7")
         self.horizontalLayout_11.addWidget(self.MaxEpoch_EN_7)
-        spacerItem29 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem29)
+        spacerItem28 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem28)
         self.OutputChannelsBox = EditableComboBox(self.OutputChannelsArea)
         self.OutputChannelsBox.setMinimumSize(QtCore.QSize(150, 35))
         self.OutputChannelsBox.setMaximumSize(QtCore.QSize(150, 33))
         self.OutputChannelsBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.OutputChannelsBox.setObjectName("OutputChannelsBox")
         self.horizontalLayout_11.addWidget(self.OutputChannelsBox)
-        spacerItem30 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem30)
+        spacerItem29 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem29)
         self.horizontalLayout_11.setStretch(3, 1)
         self.InputChannelsArea = QtWidgets.QWidget(self.ModelParaArea)
         self.InputChannelsArea.setGeometry(QtCore.QRect(10, 90, 700, 41))
@@ -434,8 +743,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_9.setSpacing(0)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        spacerItem31 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem31)
+        spacerItem30 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem30)
         self.StrongBodyLabel_5 = StrongBodyLabel(self.InputChannelsArea)
         self.StrongBodyLabel_5.setMinimumSize(QtCore.QSize(100, 0))
         self.StrongBodyLabel_5.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -447,19 +756,19 @@ class Ui_Trainer_Page(object):
         self.CaptionLabel_5.setStyleSheet("color: rgb(116, 120, 122);")
         self.CaptionLabel_5.setObjectName("CaptionLabel_5")
         self.horizontalLayout_9.addWidget(self.CaptionLabel_5)
-        spacerItem32 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem32)
+        spacerItem31 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem31)
         self.InputChannelsBox = EditableComboBox(self.InputChannelsArea)
         self.InputChannelsBox.setMinimumSize(QtCore.QSize(150, 35))
         self.InputChannelsBox.setMaximumSize(QtCore.QSize(150, 33))
         self.InputChannelsBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.InputChannelsBox.setObjectName("InputChannelsBox")
         self.horizontalLayout_9.addWidget(self.InputChannelsBox)
-        spacerItem33 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem33)
+        spacerItem32 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem32)
         self.horizontalLayout_9.setStretch(3, 1)
         self.ModelParaArea_2 = SimpleCardWidget(self.scrollAreaWidgetContents)
-        self.ModelParaArea_2.setGeometry(QtCore.QRect(0, 630, 721, 61))
+        self.ModelParaArea_2.setGeometry(QtCore.QRect(0, 650, 721, 61))
         self.ModelParaArea_2.setObjectName("ModelParaArea_2")
         self.FigureSizeArea = QtWidgets.QWidget(self.ModelParaArea_2)
         self.FigureSizeArea.setGeometry(QtCore.QRect(10, 10, 700, 41))
@@ -472,8 +781,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        spacerItem34 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_12.addItem(spacerItem34)
+        spacerItem33 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem33)
         self.MaxEpoch_CN_8 = StrongBodyLabel(self.FigureSizeArea)
         self.MaxEpoch_CN_8.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_8.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -485,19 +794,19 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_8.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_8.setObjectName("MaxEpoch_EN_8")
         self.horizontalLayout_12.addWidget(self.MaxEpoch_EN_8)
-        spacerItem35 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_12.addItem(spacerItem35)
+        spacerItem34 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem34)
         self.FigureSizeBox = EditableComboBox(self.FigureSizeArea)
         self.FigureSizeBox.setMinimumSize(QtCore.QSize(150, 35))
         self.FigureSizeBox.setMaximumSize(QtCore.QSize(150, 33))
         self.FigureSizeBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.FigureSizeBox.setObjectName("FigureSizeBox")
         self.horizontalLayout_12.addWidget(self.FigureSizeBox)
-        spacerItem36 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_12.addItem(spacerItem36)
+        spacerItem35 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem35)
         self.horizontalLayout_12.setStretch(3, 1)
         self.ModelParaArea_3 = SimpleCardWidget(self.scrollAreaWidgetContents)
-        self.ModelParaArea_3.setGeometry(QtCore.QRect(0, 690, 721, 101))
+        self.ModelParaArea_3.setGeometry(QtCore.QRect(0, 710, 721, 101))
         self.ModelParaArea_3.setObjectName("ModelParaArea_3")
         self.TransDepthArea = QtWidgets.QWidget(self.ModelParaArea_3)
         self.TransDepthArea.setGeometry(QtCore.QRect(10, 10, 700, 41))
@@ -510,8 +819,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_25.setSpacing(0)
         self.horizontalLayout_25.setObjectName("horizontalLayout_25")
-        spacerItem37 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_25.addItem(spacerItem37)
+        spacerItem36 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem36)
         self.MaxEpoch_CN_17 = StrongBodyLabel(self.TransDepthArea)
         self.MaxEpoch_CN_17.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_17.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -523,16 +832,16 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_17.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_17.setObjectName("MaxEpoch_EN_17")
         self.horizontalLayout_25.addWidget(self.MaxEpoch_EN_17)
-        spacerItem38 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem37 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem37)
+        self.TransDepthBox = EditableComboBox(self.TransDepthArea)
+        self.TransDepthBox.setMinimumSize(QtCore.QSize(150, 35))
+        self.TransDepthBox.setMaximumSize(QtCore.QSize(150, 33))
+        self.TransDepthBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.TransDepthBox.setObjectName("TransDepthBox")
+        self.horizontalLayout_25.addWidget(self.TransDepthBox)
+        spacerItem38 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_25.addItem(spacerItem38)
-        self.TransDepthAreaBox = EditableComboBox(self.TransDepthArea)
-        self.TransDepthAreaBox.setMinimumSize(QtCore.QSize(150, 35))
-        self.TransDepthAreaBox.setMaximumSize(QtCore.QSize(150, 33))
-        self.TransDepthAreaBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.TransDepthAreaBox.setObjectName("TransDepthAreaBox")
-        self.horizontalLayout_25.addWidget(self.TransDepthAreaBox)
-        spacerItem39 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_25.addItem(spacerItem39)
         self.horizontalLayout_25.setStretch(3, 1)
         self.TransHeadArea = QtWidgets.QWidget(self.ModelParaArea_3)
         self.TransHeadArea.setGeometry(QtCore.QRect(10, 50, 700, 41))
@@ -545,8 +854,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_26.setSpacing(0)
         self.horizontalLayout_26.setObjectName("horizontalLayout_26")
-        spacerItem40 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_26.addItem(spacerItem40)
+        spacerItem39 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_26.addItem(spacerItem39)
         self.MaxEpoch_CN_18 = StrongBodyLabel(self.TransHeadArea)
         self.MaxEpoch_CN_18.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_18.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -558,25 +867,30 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_18.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_18.setObjectName("MaxEpoch_EN_18")
         self.horizontalLayout_26.addWidget(self.MaxEpoch_EN_18)
-        spacerItem41 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem40 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_26.addItem(spacerItem40)
+        self.TransHeadBox = EditableComboBox(self.TransHeadArea)
+        self.TransHeadBox.setMinimumSize(QtCore.QSize(150, 35))
+        self.TransHeadBox.setMaximumSize(QtCore.QSize(150, 33))
+        self.TransHeadBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.TransHeadBox.setObjectName("TransHeadBox")
+        self.horizontalLayout_26.addWidget(self.TransHeadBox)
+        spacerItem41 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_26.addItem(spacerItem41)
-        self.TransHeadAreaBox = EditableComboBox(self.TransHeadArea)
-        self.TransHeadAreaBox.setMinimumSize(QtCore.QSize(150, 35))
-        self.TransHeadAreaBox.setMaximumSize(QtCore.QSize(150, 33))
-        self.TransHeadAreaBox.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.TransHeadAreaBox.setObjectName("TransHeadAreaBox")
-        self.horizontalLayout_26.addWidget(self.TransHeadAreaBox)
-        spacerItem42 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_26.addItem(spacerItem42)
         self.horizontalLayout_26.setStretch(3, 1)
         self.SubtitleLabel_2_EN_3 = BodyLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_2_EN_3.setGeometry(QtCore.QRect(0, 850, 150, 20))
+        self.SubtitleLabel_2_EN_3.setGeometry(QtCore.QRect(0, 870, 150, 20))
         self.SubtitleLabel_2_EN_3.setObjectName("SubtitleLabel_2_EN_3")
         self.SubtitleLabel_2_CN_3 = SubtitleLabel(self.scrollAreaWidgetContents)
-        self.SubtitleLabel_2_CN_3.setGeometry(QtCore.QRect(0, 820, 150, 30))
+        self.SubtitleLabel_2_CN_3.setGeometry(QtCore.QRect(0, 840, 150, 30))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(15)
+        font.setBold(True)
+        self.SubtitleLabel_2_CN_3.setFont(font)
         self.SubtitleLabel_2_CN_3.setObjectName("SubtitleLabel_2_CN_3")
         self.ModelParaArea_4 = SimpleCardWidget(self.scrollAreaWidgetContents)
-        self.ModelParaArea_4.setGeometry(QtCore.QRect(0, 880, 721, 181))
+        self.ModelParaArea_4.setGeometry(QtCore.QRect(0, 900, 721, 181))
         self.ModelParaArea_4.setObjectName("ModelParaArea_4")
         self.RootArea = QtWidgets.QWidget(self.ModelParaArea_4)
         self.RootArea.setGeometry(QtCore.QRect(10, 10, 700, 41))
@@ -589,8 +903,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_27.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_27.setSpacing(0)
         self.horizontalLayout_27.setObjectName("horizontalLayout_27")
-        spacerItem43 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_27.addItem(spacerItem43)
+        spacerItem42 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_27.addItem(spacerItem42)
         self.MaxEpoch_CN_19 = StrongBodyLabel(self.RootArea)
         self.MaxEpoch_CN_19.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_19.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -602,8 +916,8 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_19.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_19.setObjectName("MaxEpoch_EN_19")
         self.horizontalLayout_27.addWidget(self.MaxEpoch_EN_19)
-        spacerItem44 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_27.addItem(spacerItem44)
+        spacerItem43 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_27.addItem(spacerItem43)
         self.CaptionLabel = CaptionLabel(self.RootArea)
         self.CaptionLabel.setMinimumSize(QtCore.QSize(30, 35))
         self.CaptionLabel.setMaximumSize(QtCore.QSize(16777215, 35))
@@ -620,8 +934,8 @@ class Ui_Trainer_Page(object):
         self.RootBox.setMaximumSize(QtCore.QSize(300, 35))
         self.RootBox.setObjectName("RootBox")
         self.horizontalLayout_27.addWidget(self.RootBox)
-        spacerItem45 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_27.addItem(spacerItem45)
+        spacerItem44 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_27.addItem(spacerItem44)
         self.horizontalLayout_27.setStretch(3, 1)
         self.LabeledImagesArea = QtWidgets.QWidget(self.ModelParaArea_4)
         self.LabeledImagesArea.setGeometry(QtCore.QRect(10, 50, 700, 41))
@@ -634,8 +948,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_28.setSpacing(0)
         self.horizontalLayout_28.setObjectName("horizontalLayout_28")
-        spacerItem46 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_28.addItem(spacerItem46)
+        spacerItem45 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_28.addItem(spacerItem45)
         self.StrongBodyLabel_10 = StrongBodyLabel(self.LabeledImagesArea)
         self.StrongBodyLabel_10.setMinimumSize(QtCore.QSize(100, 0))
         self.StrongBodyLabel_10.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -647,8 +961,8 @@ class Ui_Trainer_Page(object):
         self.CaptionLabel_10.setStyleSheet("color: rgb(116, 120, 122);")
         self.CaptionLabel_10.setObjectName("CaptionLabel_10")
         self.horizontalLayout_28.addWidget(self.CaptionLabel_10)
-        spacerItem47 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_28.addItem(spacerItem47)
+        spacerItem46 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_28.addItem(spacerItem46)
         self.CaptionLabel_12 = CaptionLabel(self.LabeledImagesArea)
         self.CaptionLabel_12.setMinimumSize(QtCore.QSize(30, 35))
         self.CaptionLabel_12.setMaximumSize(QtCore.QSize(16777215, 35))
@@ -665,8 +979,8 @@ class Ui_Trainer_Page(object):
         self.LabeledImagesBox.setMaximumSize(QtCore.QSize(300, 35))
         self.LabeledImagesBox.setObjectName("LabeledImagesBox")
         self.horizontalLayout_28.addWidget(self.LabeledImagesBox)
-        spacerItem48 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_28.addItem(spacerItem48)
+        spacerItem47 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_28.addItem(spacerItem47)
         self.horizontalLayout_28.setStretch(3, 1)
         self.OutputPathwayArea = QtWidgets.QWidget(self.ModelParaArea_4)
         self.OutputPathwayArea.setGeometry(QtCore.QRect(10, 130, 700, 41))
@@ -679,8 +993,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_29.setSpacing(0)
         self.horizontalLayout_29.setObjectName("horizontalLayout_29")
-        spacerItem49 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_29.addItem(spacerItem49)
+        spacerItem48 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_29.addItem(spacerItem48)
         self.MaxEpoch_CN_20 = StrongBodyLabel(self.OutputPathwayArea)
         self.MaxEpoch_CN_20.setMinimumSize(QtCore.QSize(100, 0))
         self.MaxEpoch_CN_20.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -692,8 +1006,8 @@ class Ui_Trainer_Page(object):
         self.MaxEpoch_EN_20.setStyleSheet("color: rgb(116, 120, 122);")
         self.MaxEpoch_EN_20.setObjectName("MaxEpoch_EN_20")
         self.horizontalLayout_29.addWidget(self.MaxEpoch_EN_20)
-        spacerItem50 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_29.addItem(spacerItem50)
+        spacerItem49 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_29.addItem(spacerItem49)
         self.CaptionLabel_14 = CaptionLabel(self.OutputPathwayArea)
         self.CaptionLabel_14.setMinimumSize(QtCore.QSize(30, 35))
         self.CaptionLabel_14.setMaximumSize(QtCore.QSize(16777215, 35))
@@ -711,8 +1025,8 @@ class Ui_Trainer_Page(object):
         self.OutputPathwayBox.setMaximumSize(QtCore.QSize(300, 35))
         self.OutputPathwayBox.setObjectName("OutputPathwayBox")
         self.horizontalLayout_29.addWidget(self.OutputPathwayBox)
-        spacerItem51 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_29.addItem(spacerItem51)
+        spacerItem50 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_29.addItem(spacerItem50)
         self.horizontalLayout_29.setStretch(3, 1)
         self.DataSetArea = QtWidgets.QWidget(self.ModelParaArea_4)
         self.DataSetArea.setGeometry(QtCore.QRect(10, 90, 700, 41))
@@ -725,8 +1039,8 @@ class Ui_Trainer_Page(object):
         self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_31.setSpacing(0)
         self.horizontalLayout_31.setObjectName("horizontalLayout_31")
-        spacerItem52 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_31.addItem(spacerItem52)
+        spacerItem51 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_31.addItem(spacerItem51)
         self.StrongBodyLabel_11 = StrongBodyLabel(self.DataSetArea)
         self.StrongBodyLabel_11.setMinimumSize(QtCore.QSize(100, 0))
         self.StrongBodyLabel_11.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -738,8 +1052,8 @@ class Ui_Trainer_Page(object):
         self.CaptionLabel_11.setStyleSheet("color: rgb(116, 120, 122);")
         self.CaptionLabel_11.setObjectName("CaptionLabel_11")
         self.horizontalLayout_31.addWidget(self.CaptionLabel_11)
-        spacerItem53 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_31.addItem(spacerItem53)
+        spacerItem52 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_31.addItem(spacerItem52)
         self.CaptionLabel_13 = CaptionLabel(self.DataSetArea)
         self.CaptionLabel_13.setMinimumSize(QtCore.QSize(30, 35))
         self.CaptionLabel_13.setMaximumSize(QtCore.QSize(16777215, 35))
@@ -752,28 +1066,44 @@ class Ui_Trainer_Page(object):
         self.CaptionLabel_13.setObjectName("CaptionLabel_13")
         self.horizontalLayout_31.addWidget(self.CaptionLabel_13)
         self.DataSetBox = LineEdit(self.DataSetArea)
+        self.DataSetBox.setEnabled(False)
         self.DataSetBox.setMinimumSize(QtCore.QSize(300, 35))
         self.DataSetBox.setMaximumSize(QtCore.QSize(300, 35))
         self.DataSetBox.setObjectName("DataSetBox")
         self.horizontalLayout_31.addWidget(self.DataSetBox)
-        spacerItem54 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_31.addItem(spacerItem54)
+        spacerItem53 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_31.addItem(spacerItem53)
         self.horizontalLayout_31.setStretch(3, 1)
         self.SubmmitButton = PrimaryPushButton(self.scrollAreaWidgetContents)
-        self.SubmmitButton.setGeometry(QtCore.QRect(550, 1080, 150, 32))
+        self.SubmmitButton.setGeometry(QtCore.QRect(550, 1100, 150, 32))
         self.SubmmitButton.setMinimumSize(QtCore.QSize(150, 0))
         self.SubmmitButton.setMaximumSize(QtCore.QSize(150, 16777215))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
+        font.setFamily("微软雅黑")
         font.setPointSize(12)
-        font.setBold(True)
+        font.setBold(False)
         self.SubmmitButton.setFont(font)
+        self.SubmmitButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.SubmmitButton.setObjectName("SubmmitButton")
         self.MainArea.setWidget(self.scrollAreaWidgetContents)
         self.widget = QtWidgets.QWidget(Trainer_Page)
-        self.widget.setGeometry(QtCore.QRect(0, 180, 801, 1))
+        self.widget.setGeometry(QtCore.QRect(0, 150, 801, 1))
         self.widget.setStyleSheet("background-color: rgb(232, 232, 232);")
         self.widget.setObjectName("widget")
+        
+        self.MaxEpochBox.addItems(MaxEpoch_Items)
+        self.EarlyStopBox.addItems(EarlyStop_Items)
+        self.BatchSizeBox.addItems(BatchSize_Items)
+        self.LearningRateBox.addItems(LearningRate_Items)
+        self.CudaDeviceBox.addItems(CudaDevice_Items)
+        self.ModelBox.addItems(Model_Items)
+        self.LossFunctionBox.addItems(LossFunction_Items)
+        self.DimChannelsBox.addItems(DimChannels_Items)
+        self.OutputChannelsBox.addItems(OutputChannels_Items)
+        self.InputChannelsBox.addItems(InputChannels_Items)
+        self.FigureSizeBox.addItems(FigureSize_Items)
+        self.TransDepthBox.addItems(TransDepth_Items)
+        self.TransHeadBox.addItems(TransHead_Items)
 
         self.retranslateUi(Trainer_Page)
         QtCore.QMetaObject.connectSlotsByName(Trainer_Page)
@@ -787,75 +1117,66 @@ class Ui_Trainer_Page(object):
         self.SubtitleLabel_1_CN.setText(_translate("Trainer_Page", "基本参数"))
         self.MaxEpoch_CN.setText(_translate("Trainer_Page", "最大训练轮次"))
         self.MaxEpoch_EN.setText(_translate("Trainer_Page", "Max Epoch"))
-        self.MaxEpochBox.addItems(MaxEpoch_Items)
         self.MaxEpochBox.setText(_translate("Trainer_Page", "2000"))
         self.StrongBodyLabel_2.setText(_translate("Trainer_Page", "早停阈值轮次"))
         self.CaptionLabel_2.setText(_translate("Trainer_Page", "Early Stop"))
-        self.EarlyStopBox.addItems(EarlyStop_Items)
         self.EarlyStopBox.setText(_translate("Trainer_Page", "200"))
         self.StrongBodyLabel_4.setText(_translate("Trainer_Page", "随机种子"))
         self.CaptionLabel_4.setText(_translate("Trainer_Page", "Random Seed"))
         self.RandomSeedBox.setText(_translate("Trainer_Page", "42"))
         self.MaxEpoch_CN_2.setText(_translate("Trainer_Page", "批次规模"))
         self.MaxEpoch_EN_2.setText(_translate("Trainer_Page", "Batch Size"))
-        self.BatchSizeBox.addItems(BatchSize_Items)
         self.BatchSizeBox.setText(_translate("Trainer_Page", "4"))
         self.MaxEpoch_CN_3.setText(_translate("Trainer_Page", "学习率"))
         self.MaxEpoch_EN_3.setText(_translate("Trainer_Page", "Learning Rate"))
-        self.LearningRateBox.addItems(LearningRate_Items)
         self.LearningRateBox.setText(_translate("Trainer_Page", "0.001"))
         self.MaxEpoch_CN_4.setText(_translate("Trainer_Page", "显卡设备编号"))
         self.MaxEpoch_EN_4.setText(_translate("Trainer_Page", "Cuda Device"))
-        self.CudaDeviceBox.addItems(CudaDevice_Items)
         self.CudaDeviceBox.setText(_translate("Trainer_Page", "0"))
         self.SubtitleLabel_2_CN.setText(_translate("Trainer_Page", "模型参数"))
         self.SubtitleLabel_2_EN.setText(_translate("Trainer_Page", "Model Parameters"))
         self.MaxEpoch_CN_5.setText(_translate("Trainer_Page", "模型"))
         self.MaxEpoch_EN_5.setText(_translate("Trainer_Page", "Model"))
-        self.ModelBox.addItems(Model_Items)
         self.ModelBox.setText(_translate("Trainer_Page", "Unet"))
         self.StrongBodyLabel_3.setText(_translate("Trainer_Page", "损失函数"))
         self.CaptionLabel_3.setText(_translate("Trainer_Page", "Loss Function"))
-        self.LossFunctionBox.addItems(LossFunction_Items)
         self.LossFunctionBox.setText(_translate("Trainer_Page", "MDR"))
         self.MaxEpoch_CN_6.setText(_translate("Trainer_Page", "编码维度"))
         self.MaxEpoch_EN_6.setText(_translate("Trainer_Page", "Dim Channels"))
-        self.DimChannelsBox.addItems(DimChannels_Items)
         self.DimChannelsBox.setText(_translate("Trainer_Page", "32"))
         self.MaxEpoch_CN_7.setText(_translate("Trainer_Page", "输出维度"))
         self.MaxEpoch_EN_7.setText(_translate("Trainer_Page", "Output Channels"))
-        self.OutputChannelsBox.addItems(OutputChannels_Items)
         self.OutputChannelsBox.setText(_translate("Trainer_Page", "6"))
         self.StrongBodyLabel_5.setText(_translate("Trainer_Page", "输入维度"))
         self.CaptionLabel_5.setText(_translate("Trainer_Page", "Input Channels"))
-        self.InputChannelsBox.addItems(InputChannels_Items)
         self.InputChannelsBox.setText(_translate("Trainer_Page", "1"))
         self.MaxEpoch_CN_8.setText(_translate("Trainer_Page", "图像大小"))
         self.MaxEpoch_EN_8.setText(_translate("Trainer_Page", "Figure Size"))
-        self.FigureSizeBox.addItems(FigureSize_Items)
         self.FigureSizeBox.setText(_translate("Trainer_Page", "512"))
         self.MaxEpoch_CN_17.setText(_translate("Trainer_Page", "Trans 层数"))
         self.MaxEpoch_EN_17.setText(_translate("Trainer_Page", "Trans Depth"))
-        self.TransDepthAreaBox.addItems(TransDepthArea_Items)
-        self.TransDepthAreaBox.setText(_translate("Trainer_Page", "[4,4,4,4]"))
+        self.TransDepthBox.setText(_translate("Trainer_Page", "[4,4,4,4]"))
         self.MaxEpoch_CN_18.setText(_translate("Trainer_Page", "Trans 头数"))
         self.MaxEpoch_EN_18.setText(_translate("Trainer_Page", "Trans Head"))
-        self.TransHeadAreaBox.addItems(TransHeadArea_Items)
-        self.TransHeadAreaBox.setText(_translate("Trainer_Page", "[2,4,8,16]"))
+        self.TransHeadBox.setText(_translate("Trainer_Page", "[2,4,8,16]"))
         self.SubtitleLabel_2_EN_3.setText(_translate("Trainer_Page", "Pathway Parameters"))
         self.SubtitleLabel_2_CN_3.setText(_translate("Trainer_Page", "路径参数"))
         self.MaxEpoch_CN_19.setText(_translate("Trainer_Page", "根目录"))
         self.MaxEpoch_EN_19.setText(_translate("Trainer_Page", "Root"))
         self.CaptionLabel.setText(_translate("Trainer_Page", "~/ "))
+        self.RootBox.setText(_translate("Trainer_Page", "Github/STUnet"))
         self.StrongBodyLabel_10.setText(_translate("Trainer_Page", "带标签图像"))
         self.CaptionLabel_10.setText(_translate("Trainer_Page", "Labeled Images"))
         self.CaptionLabel_12.setText(_translate("Trainer_Page", "root/ "))
+        self.LabeledImagesBox.setText(_translate("Trainer_Page", "Labeled_Images/TwT"))
         self.MaxEpoch_CN_20.setText(_translate("Trainer_Page", "输出路径"))
         self.MaxEpoch_EN_20.setText(_translate("Trainer_Page", "Output Pathway"))
         self.CaptionLabel_14.setText(_translate("Trainer_Page", "root/ "))
+        self.OutputPathwayBox.setText(_translate("Trainer_Page", "Results/512/Unet/Trainer042"))
         self.StrongBodyLabel_11.setText(_translate("Trainer_Page", "数据集"))
         self.CaptionLabel_11.setText(_translate("Trainer_Page", "Data Set"))
         self.CaptionLabel_13.setText(_translate("Trainer_Page", "root/ "))
-        self.SubmmitButton.setText(_translate("Trainer_Page", "Submit"))
+        self.DataSetBox.setText(_translate("Trainer_Page", "Dataset/512/TwT"))
+        self.SubmmitButton.setText(_translate("Trainer_Page", "提交任务"))
 from qfluentwidgets import BodyLabel, CaptionLabel, DisplayLabel, EditableComboBox, LineEdit, PrimaryPushButton, SimpleCardWidget, SmoothScrollArea, StrongBodyLabel, SubtitleLabel, TitleLabel
 import resource_rc

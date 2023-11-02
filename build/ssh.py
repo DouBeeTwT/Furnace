@@ -1,26 +1,51 @@
 import paramiko
+import time
 
-def return_gpu_info(GPU_Name:str, Username:str, Password:str):
-    Port = int("2223"+GPU_Name[-1])
-    Results = [False, False, False, False,
-               False, False, False, False,
-               False, False,
-               False, False, False, False,
-               False, False, False, False]
+class SSH_Client(object):
+    def __init__(self, ip, port, username, password, timeout=30, flag_ftp=False) -> None:
+        self.ip =ip
+        self.port = port
+        self.username = username
+        self.password = password
+        self.timeout = timeout
+        self.flag_ftp = flag_ftp
 
-    ssh_client = paramiko.SSHClient()
-    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) 
-    ssh_client.connect(hostname="202.120.45.56", port=Port, username=Username, password=Password)
-    stdin, stdout, stderr = ssh_client.exec_command('nvidia-smi | grep \"0MiB\" -B 1 | grep \"Off\"')
-    stdout_info = stdout.read().decode("utf8")
-    available_info_list = stdout_info.split("\n")[:-1]
-    for available_info in available_info_list:
-        Results[int(GPU_Name[-1])*2-2+int(available_info[4])] = True
-    ssh_client.close
+        # Create a ssh client
+        self.ssh = paramiko.SSHClient()
+        if self.flag_ftp:
+            # Create a file transport client
+            self.transport = paramiko.Transport(sock=(self.ip, self.port))
+
+    def connect(self):
+        try:
+            self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            self.ssh.connect(hostname=self.ip, port=self.port, username=self.username, password=self.password)
+            self.channel = self.ssh.invoke_shell()
+            time.sleep(5)
+            stdout = self.channel.recv(1024).decode()
+            if self.flag_ftp:
+                self.transport.connect(username=self.username, password=self.password)
+        except:
+            return "Connect Failed"
+        return stdout
+        
+        
+    def close(self):
+        if self.flag_ftp:
+            self.transport.close()
+        self.channel.close()
+        self.ssh.close()
     
-    return Results
-
-if __name__ == "__main__":
-    r = return_gpu_info(GPU_Name="GPU02", Username="taowentao", Password="uhbuhbuhb")
-    for i in r:
-        print(i)
+    def cmd(self, command, sleep=0.5):
+        self.channel.send(command+"\n")
+        time.sleep(sleep)
+        stdout = self.channel.recv(1024).decode("utf8")
+        return stdout
+    
+    def cuda_available_test(self):
+        Results = [False, False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False, False]
+        cuda_avilable_list = self.cmd(command='nvidia-smi | grep \"0MiB\" -B 1 | grep \"Off\"').split("\n")[:-1]
+        for available_info in cuda_avilable_list:
+            Results[int(self.port[-1])*2-2+int(available_info[4])] = True
+        return Results

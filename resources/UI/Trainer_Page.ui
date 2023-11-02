@@ -24,9 +24,9 @@
    </property>
    <property name="font">
     <font>
-     <family>Segoe UI</family>
+     <family>微软雅黑</family>
      <pointsize>32</pointsize>
-     <bold>false</bold>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -64,7 +64,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>180</y>
+     <y>149</y>
      <width>721</width>
      <height>690</height>
     </rect>
@@ -110,7 +110,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
+       <y>50</y>
        <width>150</width>
        <height>20</height>
       </rect>
@@ -123,10 +123,17 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>20</y>
        <width>150</width>
        <height>30</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>15</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>基本参数</string>
@@ -136,7 +143,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>60</y>
+       <y>80</y>
        <width>720</width>
        <height>260</height>
       </rect>
@@ -426,7 +433,7 @@ border: 0px solid;</string>
 	border-radius: 7px;
 }</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,1,0,0,0,0">
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,1,0,0,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -510,48 +517,16 @@ border: 0px solid;</string>
         </spacer>
        </item>
        <item>
-        <widget class="PrimaryPushButton" name="RandomSeedButton">
+        <widget class="LineEdit" name="RandomSeedBox">
          <property name="minimumSize">
           <size>
-           <width>35</width>
-           <height>0</height>
+           <width>121</width>
+           <height>33</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>35</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_7">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>10</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="EditableComboBox" name="RandomSeedBox">
-         <property name="minimumSize">
-          <size>
-           <width>105</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>105</width>
+           <width>121</width>
            <height>33</height>
           </size>
          </property>
@@ -560,6 +535,330 @@ border: 0px solid;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PrimaryPushButton" name="RandomSeedButton">
+         <property name="minimumSize">
+          <size>
+           <width>28</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">PushButton, ToolButton, ToggleButton, ToggleToolButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+PrimaryPushButton,
+PrimaryToolButton,
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+PrimaryPushButton:hover,
+PrimaryToolButton:hover,
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    background-color: #00a7b3;
+    border: 1px solid #2daab3;
+    border-bottom: 1px solid #007780;
+}
+
+PrimaryPushButton:pressed,
+PrimaryToolButton:pressed,
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(255, 255, 255, 0.63);
+    background-color: #3eabb3;
+    border: 1px solid #3eabb3;
+}
+
+PrimaryPushButton:disabled,
+PrimaryToolButton:disabled,
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(205, 205, 205);
+    border: 1px solid rgb(205, 205, 205);
+}
+
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #3eabb3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+HyperlinkButton {
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransprentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransprentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
          </property>
         </widget>
        </item>
@@ -991,10 +1290,17 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>350</y>
+       <y>370</y>
        <width>150</width>
        <height>30</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>15</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>模型参数</string>
@@ -1004,7 +1310,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>380</y>
+       <y>400</y>
        <width>150</width>
        <height>20</height>
       </rect>
@@ -1017,7 +1323,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>410</y>
+       <y>430</y>
        <width>721</width>
        <height>221</height>
       </rect>
@@ -1702,7 +2008,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>630</y>
+       <y>650</y>
        <width>721</width>
        <height>61</height>
       </rect>
@@ -1847,7 +2153,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>690</y>
+       <y>710</y>
        <width>721</width>
        <height>101</height>
       </rect>
@@ -1951,7 +2257,7 @@ border: 0px solid;</string>
         </spacer>
        </item>
        <item>
-        <widget class="EditableComboBox" name="TransDepthAreaBox">
+        <widget class="EditableComboBox" name="TransDepthBox">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -2086,7 +2392,7 @@ border: 0px solid;</string>
         </spacer>
        </item>
        <item>
-        <widget class="EditableComboBox" name="TransHeadAreaBox">
+        <widget class="EditableComboBox" name="TransHeadBox">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -2127,7 +2433,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>850</y>
+       <y>870</y>
        <width>150</width>
        <height>20</height>
       </rect>
@@ -2140,10 +2446,17 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>820</y>
+       <y>840</y>
        <width>150</width>
        <height>30</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>15</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>路径参数</string>
@@ -2153,7 +2466,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>880</y>
+       <y>900</y>
        <width>721</width>
        <height>181</height>
       </rect>
@@ -2298,6 +2611,9 @@ border: 0px solid;</string>
            <width>300</width>
            <height>35</height>
           </size>
+         </property>
+         <property name="text">
+          <string>Github/STUnet</string>
          </property>
         </widget>
        </item>
@@ -2456,6 +2772,9 @@ border: 0px solid;</string>
            <width>300</width>
            <height>35</height>
           </size>
+         </property>
+         <property name="text">
+          <string>Labeled_Images/TwT</string>
          </property>
         </widget>
        </item>
@@ -2618,6 +2937,9 @@ border: 0px solid;</string>
            <height>35</height>
           </size>
          </property>
+         <property name="text">
+          <string>Results/512/Unet/Trainer042</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -2764,6 +3086,9 @@ border: 0px solid;</string>
        </item>
        <item>
         <widget class="LineEdit" name="DataSetBox">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="minimumSize">
           <size>
            <width>300</width>
@@ -2775,6 +3100,9 @@ border: 0px solid;</string>
            <width>300</width>
            <height>35</height>
           </size>
+         </property>
+         <property name="text">
+          <string>Dataset/512/TwT</string>
          </property>
         </widget>
        </item>
@@ -2798,7 +3126,7 @@ border: 0px solid;</string>
      <property name="geometry">
       <rect>
        <x>550</x>
-       <y>1080</y>
+       <y>1100</y>
        <width>150</width>
        <height>32</height>
       </rect>
@@ -2817,13 +3145,16 @@ border: 0px solid;</string>
      </property>
      <property name="font">
       <font>
-       <family>Segoe UI</family>
+       <family>微软雅黑</family>
        <pointsize>12</pointsize>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="text">
-      <string>Submit</string>
+      <string>提交任务</string>
      </property>
     </widget>
    </widget>
@@ -2832,7 +3163,7 @@ border: 0px solid;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>180</y>
+     <y>150</y>
      <width>801</width>
      <height>1</height>
     </rect>

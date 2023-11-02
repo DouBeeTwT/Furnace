@@ -1,7 +1,8 @@
 import sys
+from random import randint
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, QWidget
 
 from qfluentwidgets import SplitFluentWindow, FluentIcon, setThemeColor
@@ -12,7 +13,8 @@ from build.pages.monitor_page import Monitor_Page
 from build.pages.prediction_page import Prediction_Page
 from build.pages.setting_page import Setting_Page
 
-from build.ssh import return_gpu_info
+from build.ssh import *
+from build.config import *
 
 class Demo(SplitFluentWindow):
 
@@ -31,11 +33,6 @@ class Demo(SplitFluentWindow):
         setThemeColor("#148CD3")
 
         ### Add Sub Page
-        
-        # trainer page
-        self.trainer_page = Trainer_Page(self)
-        self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
-
         # home page
         self.home_page = Home_Page(self)
         self.addSubInterface(self.home_page, FluentIcon.HOME, "Home")
@@ -52,9 +49,19 @@ class Demo(SplitFluentWindow):
                                self.infomation_page.cuda62, self.infomation_page.cuda63,
                                self.infomation_page.cuda64, self.infomation_page.cuda65,
                                self.infomation_page.cuda66, self.infomation_page.cuda67]
-        self.infomation_page.PrimaryPushButton.clicked.connect(self.ssh)
+        self.infomation_page.PrimaryPushButton.clicked.connect(self.cuda_available_test)
         self.infomation_page.ComboBox.currentIndexChanged.connect(self.color_clear)
-
+        
+        # trainer page
+        self.trainer_page = Trainer_Page(self)
+        self.addSubInterface(self.trainer_page, FluentIcon.SEND, "Trainer")
+        self.trainer_page.RandomSeedButton.setStyleSheet("PrimaryPushButton{border-image: url(./resources/images/random.png)}")
+        self.trainer_page.RandomSeedButton.clicked.connect(self.rollrandomseed)
+        self.trainer_page.RandomSeedBox.textChanged.connect(self.autofillpathway)
+        self.trainer_page.ModelBox.textChanged.connect(self.autofillpathway)
+        self.trainer_page.FigureSizeBox.textChanged.connect(self.autofillpathway)
+        self.trainer_page.LabeledImagesBox.textChanged.connect(self.autofillpathway)
+        self.trainer_page.SubmmitButton.clicked.connect(self.submit)
 
         # Monitor_Page
         self.monitor_page = Monitor_Page(self)
@@ -68,7 +75,6 @@ class Demo(SplitFluentWindow):
         self.setting_page = Setting_Page(self)
         self.addSubInterface(self.setting_page, FluentIcon.SETTING, "Setting", position="Buttom")
         
-
     def color_change(self, available_list):
         for i in range(len(self.SubtitleLabels)):
             if available_list[i]:
@@ -78,26 +84,48 @@ class Demo(SplitFluentWindow):
         for i in range(len(self.SubtitleLabels)):
             self.SubtitleLabels[i].setStyleSheet("color:black")
 
-    def ssh(self):
-        Node_List = ["GPU01", "GPU02", "GPU03", "GPU04", "GPU05", "GPU06"]
+    def cuda_available_test(self):
         if self.infomation_page.ComboBox.currentText() == "ALL":
-            for Node in Node_List:
-                lines = return_gpu_info(Node, self.infomation_page.LineEdit.text(),
-                                    self.infomation_page.PasswordLineEdit.text())
-                self.color_change(lines)
+            for index in range(1, self.infomation_page.ComboBox.count()):
+                ssh = SSH_Client(ip=login["Hostname"],
+                             port="2223"+self.infomation_page.ComboBox.itemText(index)[-1],
+                             username=self.infomation_page.UsernameBox.text(),
+                             password=self.infomation_page.PasswordBox.text())
+                ssh.connect()
+                cuda_available_list = ssh.cuda_available_test()
+                ssh.close()
+                self.color_change(cuda_available_list)
         else:
-            lines = return_gpu_info(self.infomation_page.ComboBox.currentText(),
-                                    self.infomation_page.LineEdit.text(),
-                                    self.infomation_page.PasswordLineEdit.text())
-            self.color_change(lines)
+            ssh = SSH_Client(ip=login["Hostname"],
+                             port="2223"+self.infomation_page.ComboBox.currentText()[-1],
+                             username=self.infomation_page.UsernameBox.text(),
+                             password=self.infomation_page.PasswordBox.text())
+            ssh.connect()
+            cuda_available_list = ssh.cuda_available_test()
+            ssh.close()
+            self.color_change(cuda_available_list)
+
+    def autofillpathway(self):
+        Dataset_Name = self.trainer_page.LabeledImagesBox.text().split("/")[-1]
+        Figure_Size = self.trainer_page.FigureSizeBox.text()
+        Model_Name = self.trainer_page.ModelBox.text()
+        Random_Seed = "Trainer{:03d}".format(int(self.trainer_page.RandomSeedBox.text()))
+        self.trainer_page.DataSetBox.setText("Dataset/{:s}/{:s}".format(Figure_Size, Dataset_Name))
+        self.trainer_page.OutputPathwayBox.setText("Results/{:s}/{:s}/{:s}".format(Figure_Size, Model_Name, Random_Seed))
+
+    def rollrandomseed(self):
+        self.trainer_page.RandomSeedBox.setText(str(randint(1,999)))
+
+    def submit(self):
+        ssh = SSH_Client(ip=login["Hostname"], port=login["Port"],
+                         username=self.infomation_page.UsernameBox.text(),
+                         password=self.infomation_page.PasswordBox.text())
+        self.monitor_page.MoniorBox.appendPlainText(ssh.connect())
+        ssh.cmd("screen -S {:s}".format(self.trainer_page.RandomSeedBox.text()))
+        ssh.close()
+        
 
     
-
-
-
-
-
-
 if __name__ == "__main__":
     QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
