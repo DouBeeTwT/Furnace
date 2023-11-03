@@ -65,8 +65,8 @@
     <rect>
      <x>40</x>
      <y>149</y>
-     <width>721</width>
-     <height>690</height>
+     <width>720</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -93,14 +93,14 @@ border: 0px solid;</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>721</width>
-      <height>1400</height>
+      <width>720</width>
+      <height>1300</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>650</width>
-      <height>1400</height>
+      <width>720</width>
+      <height>1300</height>
      </size>
     </property>
     <property name="styleSheet">

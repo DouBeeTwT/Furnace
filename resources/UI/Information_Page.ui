@@ -16,374 +16,290 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
-   <property name="leftMargin">
-    <number>40</number>
+  <widget class="DisplayLabel" name="PageTitle">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>60</y>
+     <width>650</width>
+     <height>51</height>
+    </rect>
    </property>
-   <property name="topMargin">
-    <number>70</number>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>32</pointsize>
+     <bold>true</bold>
+    </font>
    </property>
-   <property name="rightMargin">
-    <number>40</number>
+   <property name="styleSheet">
+    <string notr="true">color: #148CD3;</string>
    </property>
-   <property name="bottomMargin">
-    <number>30</number>
+   <property name="text">
+    <string>节点可用性测试</string>
    </property>
-   <item>
-    <layout class="QHBoxLayout" name="Info_head">
-     <item>
-      <widget class="BodyLabel" name="BodyLabel">
-       <property name="text">
-        <string>User Name</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="LineEdit" name="UsernameBox"/>
-     </item>
-     <item>
-      <widget class="BodyLabel" name="BodyLabel_2">
-       <property name="text">
-        <string>Password</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="PasswordLineEdit" name="PasswordBox"/>
-     </item>
-     <item>
-      <widget class="BodyLabel" name="BodyLabel_3">
-       <property name="text">
-        <string>Node</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="ComboBox" name="ComboBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>90</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>ALL</string>
-       </property>
-       <property name="autoDefault">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="PrimaryPushButton" name="PrimaryPushButton">
-       <property name="text">
-        <string>TEST</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="GPU_CUDA" stretch="1,1">
-     <item>
-      <layout class="QVBoxLayout" name="GPU_L">
-       <item>
-        <widget class="QGroupBox" name="GPU01">
-         <property name="title">
-          <string>GPU 01</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="SubtitleLabel" name="cuda10">
-            <property name="text">
-             <string>cuda:0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="SubtitleLabel" name="cuda11">
-            <property name="text">
-             <string>cuda:1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="GPU02">
-         <property name="title">
-          <string>GPU 02</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="SubtitleLabel" name="cuda20">
-            <property name="text">
-             <string>cuda:0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="SubtitleLabel" name="cuda21">
-            <property name="text">
-             <string>cuda:1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="GPU03">
-         <property name="title">
-          <string>GPU 03</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="SubtitleLabel" name="cuda30">
-            <property name="text">
-             <string>cuda:0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="SubtitleLabel" name="cuda31">
-            <property name="text">
-             <string>cuda:1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="GPU04">
-         <property name="title">
-          <string>GPU 04</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="SubtitleLabel" name="cuda40">
-            <property name="text">
-             <string>cuda:0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="SubtitleLabel" name="cuda41">
-            <property name="text">
-             <string>cuda:1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="GPU05">
-         <property name="title">
-          <string>GPU 05</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="SubtitleLabel" name="cuda50">
-            <property name="text">
-             <string>cuda:0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="SubtitleLabel" name="cuda51">
-            <property name="text">
-             <string>cuda:1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="GPU_R" stretch="4">
-       <item>
-        <widget class="QGroupBox" name="GPU06">
-         <property name="title">
-          <string>GPU 06</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1,1">
-          <item>
-           <layout class="QHBoxLayout" name="Subgroup1">
-            <item>
-             <widget class="SubtitleLabel" name="cuda60">
-              <property name="text">
-               <string>cuda:0</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SubtitleLabel" name="cuda61">
-              <property name="text">
-               <string>cuda:1</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="Subgroup2">
-            <item>
-             <widget class="SubtitleLabel" name="cuda62">
-              <property name="text">
-               <string>cuda:2</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SubtitleLabel" name="cuda63">
-              <property name="text">
-               <string>cuda:3</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="Subgroup3">
-            <item>
-             <widget class="SubtitleLabel" name="cuda64">
-              <property name="text">
-               <string>cuda:4</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SubtitleLabel" name="cuda65">
-              <property name="text">
-               <string>cuda:5</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="Subgroup4">
-            <item>
-             <widget class="SubtitleLabel" name="cuda66">
-              <property name="text">
-               <string>cuda:6</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SubtitleLabel" name="cuda67">
-              <property name="text">
-               <string>cuda:7</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="Subgroup5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-  </layout>
+  </widget>
+  <widget class="TitleLabel" name="TitleLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>650</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>18</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Cuda Devices Available Test</string>
+   </property>
+  </widget>
+  <widget class="SmoothScrollArea" name="MainArea">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>149</y>
+     <width>720</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border: 0px solid;</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>720</width>
+      <height>1300</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>720</width>
+      <height>1300</height>
+     </size>
+    </property>
+    <widget class="CardWidget" name="Node01_Cuda0_Area">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>300</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">CardWidget#Node01_Cuda0_Area:hover{
+	background-color: rgba(20,140,211,0.03)
+}</string>
+     </property>
+     <widget class="SubtitleLabel" name="N01_C0_Title">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>161</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Node01 - cuda:0</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="N01_C0_CheckLabel">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>50</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Check</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="N01_C0_Type">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>40</y>
+        <width>111</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>P100</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="N01_C0_logo" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/cuda.png);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Node01_Cuda0_Light" native="true">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>6</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0.07);
+border-radius: 3px;</string>
+     </property>
+    </widget>
+    <widget class="CardWidget" name="Node01_Cuda1_Area">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>20</y>
+       <width>300</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">CardWidget#Node01_Cuda1_Area:hover{
+	background-color: rgba(20,140,211,0.03)
+}</string>
+     </property>
+     <widget class="SubtitleLabel" name="N01_C1_Title">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>161</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Node01 - cuda:1</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="N01_C1_logo" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/cuda.png);</string>
+      </property>
+     </widget>
+     <widget class="StrongBodyLabel" name="N01_C0_Type_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>40</y>
+        <width>111</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>P100</string>
+      </property>
+     </widget>
+     <widget class="CaptionLabel" name="N01_C1_CheckLabel">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>50</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Check</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Node01_Cuda1_Light" native="true">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>20</y>
+       <width>6</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0.07);
+border-radius: 3px;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>149</y>
+     <width>800</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ComboBox</class>
-   <extends>QPushButton</extends>
+   <class>CardWidget</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SmoothScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CaptionLabel</class>
+   <extends>QLabel</extends>
    <header>qfluentwidgets</header>
   </customwidget>
   <customwidget>
-   <class>PushButton</class>
-   <extends>QPushButton</extends>
-   <header>qfluentwidgets</header>
-  </customwidget>
-  <customwidget>
-   <class>PrimaryPushButton</class>
-   <extends>PushButton</extends>
-   <header>qfluentwidgets</header>
-  </customwidget>
-  <customwidget>
-   <class>BodyLabel</class>
+   <class>StrongBodyLabel</class>
    <extends>QLabel</extends>
    <header>qfluentwidgets</header>
   </customwidget>
@@ -393,13 +309,13 @@
    <header>qfluentwidgets</header>
   </customwidget>
   <customwidget>
-   <class>LineEdit</class>
-   <extends>QLineEdit</extends>
+   <class>TitleLabel</class>
+   <extends>QLabel</extends>
    <header>qfluentwidgets</header>
   </customwidget>
   <customwidget>
-   <class>PasswordLineEdit</class>
-   <extends>LineEdit</extends>
+   <class>DisplayLabel</class>
+   <extends>QLabel</extends>
    <header>qfluentwidgets</header>
   </customwidget>
  </customwidgets>

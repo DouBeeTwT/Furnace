@@ -2,5 +2,7 @@
   <qresource>
     <file>images/bg1.png</file>
     <file>images/random.png</file>
+    <file>images/cuda.png</file>
+    <file>images/navida-logo.jpg</file>
   </qresource>
 </RCC>
