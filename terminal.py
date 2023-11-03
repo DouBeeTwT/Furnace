@@ -1,5 +1,6 @@
 import sys
 from random import randint
+import re
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap
@@ -117,11 +118,43 @@ class Demo(SplitFluentWindow):
         self.trainer_page.RandomSeedBox.setText(str(randint(1,999)))
 
     def submit(self):
+        # SSH Channel Connect
         ssh = SSH_Client(ip=login["Hostname"], port=login["Port"],
                          username=self.infomation_page.UsernameBox.text(),
                          password=self.infomation_page.PasswordBox.text())
-        self.monitor_page.MoniorBox.appendPlainText(ssh.connect())
-        ssh.cmd("screen -S {:s}".format(self.trainer_page.RandomSeedBox.text()))
+        stdout = ssh.connect()
+        self.monitor_page.MoniorBox.appendPlainText("Connect SSH Success")
+        
+        # Create a new screen [model_randomseed]
+        stdout = ssh.cmd("screen -S {:s}_{:s}".format(self.trainer_page.ModelBox.text(), self.trainer_page.RandomSeedBox.text()), sleep=5)
+
+        # change conda env
+        stdout = ssh.cmd("conda activate pytorch", sleep=5)
+
+        # Submit
+        stdout = ssh.cmd("cd ~/{}".format(self.trainer_page.RootBox.text()))
+        d = re.split("\[|\]|,", self.trainer_page.TransDepthBox.text())
+        d1, d2, d3, d4 = d[0], d[1], d[2], d[3]
+        h = re.split("\[|\]|,", self.trainer_page.TransHeadBox.text())
+        h1, h2, h3, h4 = h[0], h[1], h[2], h[3]
+        stdout = ssh.cmd("python runner.py --epoch_max {} --epoch_stop {} --batch_size {} --classes {} --dataset {} --device cuda:{} --depths {} {} {} {} --dim {} --figure_size {} --in_channels {} --learning_rate {} --loss_function {} --model {} --num_heads {} {} {} {} --seed {}".format(
+            self.trainer_page.MaxEpochBox.text(),
+            self.trainer_page.EarlyStopBox.text(),
+            self.trainer_page.BatchSizeBox.text(),
+            self.trainer_page.OutputChannelsBox.text(),
+            self.trainer_page.DataSetBox.text().split("/")[-1],
+            self.trainer_page.CudaDeviceBox.text(),
+            d1, d2, d3, d4,
+            self.trainer_page.DimChannelsBox.text(),
+            self.trainer_page.FigureSizeBox.text(),
+            self.trainer_page.InputChannelsBox.text(),
+            self.trainer_page.LearningRateBox.text(),
+            self.trainer_page.LossFunctionBox.text(),
+            self.trainer_page.ModelBox.text(),
+            h1, h2, h3, h4,
+            self.trainer_page.RandomSeedBox.text()
+        ))
+        self.monitor_page.MoniorBox.appendPlainText("Mission Submitted")
         ssh.close()
         
 

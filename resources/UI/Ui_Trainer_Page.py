@@ -1104,7 +1104,7 @@ class Ui_Trainer_Page(object):
         self.FigureSizeBox.addItems(FigureSize_Items)
         self.TransDepthBox.addItems(TransDepth_Items)
         self.TransHeadBox.addItems(TransHead_Items)
-
+        
         self.retranslateUi(Trainer_Page)
         QtCore.QMetaObject.connectSlotsByName(Trainer_Page)
 
@@ -1140,7 +1140,7 @@ class Ui_Trainer_Page(object):
         self.ModelBox.setText(_translate("Trainer_Page", "Unet"))
         self.StrongBodyLabel_3.setText(_translate("Trainer_Page", "损失函数"))
         self.CaptionLabel_3.setText(_translate("Trainer_Page", "Loss Function"))
-        self.LossFunctionBox.setText(_translate("Trainer_Page", "MDR"))
+        self.LossFunctionBox.setText(_translate("Trainer_Page", "Lovasz_Multical"))
         self.MaxEpoch_CN_6.setText(_translate("Trainer_Page", "编码维度"))
         self.MaxEpoch_EN_6.setText(_translate("Trainer_Page", "Dim Channels"))
         self.DimChannelsBox.setText(_translate("Trainer_Page", "32"))

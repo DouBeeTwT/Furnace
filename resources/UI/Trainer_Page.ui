@@ -1576,7 +1576,7 @@ PillToolButton:disabled:checked {
           </size>
          </property>
          <property name="text">
-          <string>MDR</string>
+          <string>Lovasz_Multical</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
