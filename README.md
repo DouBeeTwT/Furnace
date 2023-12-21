@@ -1,2 +1,2 @@
-# Trainer_GUI
+# Furance
 GUI for machine learning trainer
